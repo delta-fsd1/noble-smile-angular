@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { TranslateService } from '@ngx-translate/core';
 import { LocalizeRouterService } from '@gilsdav/ngx-translate-router';
+import * as AOS from 'aos';
 
 
 
@@ -35,7 +36,9 @@ export class AppComponent {
     this.spinner.show();
     setTimeout(() => {
       this.spinner.hide();
+      AOS.init();
     }, 2000);
+
   }
 
   showSpinner() {

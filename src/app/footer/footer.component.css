@@ -6,6 +6,12 @@ footer h4 {
 	color: #1b6e92;
 }
 
+@media (max-width: 991px){
+	footer {
+		text-align: center;
+	}
+}
+
 #footer_top {
 	background-color: #e1e8f0;
 }

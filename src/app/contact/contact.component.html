@@ -36,25 +36,25 @@
 					<div i18n *ngIf="success" class="alert alert-success"> {{'message_sent_successfully' | translate }} </div>
 					<label for="name"></label>
 					<input formControlName="name" placeholder="{{'name' | translate }}" class="form-control " type="text">
-					<div *ngIf="contactForm.get('name')?.errors && (contactForm.get('name')?.touched)" class="alert border border-danger my-2">
+					<div *ngIf="(contactForm.get('name')?.errors && contactForm.get('name')?.touched) || formError" class="text-danger my-2">
 						<p i18n *ngIf="contactForm.get('name')?.errors?.['required']">{{'name_required' | translate }}</p>
 						<p i18n *ngIf="contactForm.get('name')?.errors?.['minlength']">{{'min_length' | translate }}</p>
 						<p i18n *ngIf="contactForm.get('name')?.errors?.['maxlength']">{{'max_length' | translate }}</p>
 					</div>
 					<label for="name"></label>
-					<input formControlName="email" placeholder="{{'email' | translate }}" class="form-control " type="email">
-					<div *ngIf="contactForm.get('email')?.errors && (contactForm.get('email')?.touched)" class="alert border border-danger my-2">
+					<input formControlName="email" placeholder="{{'email' | translate }} {{'optional' | translate }}" class="form-control " type="email">
+					<div *ngIf="contactForm.get('email')?.errors && contactForm.get('email')?.touched" class="text-danger my-2">
 						<p i18n *ngIf="contactForm.get('email')?.errors?.['email']">{{'email_valid' | translate }}</p>
 					</div>
 					<label for="name"></label>
-					<input formControlName="phone" placeholder="{{'phone' | translate }} {{'optional' | translate }}" class="form-control " type="number">
-					<div *ngIf="contactForm.get('phone')?.errors && (contactForm.get('phone')?.touched)" class="alert border border-danger my-2">
+					<input formControlName="phone" placeholder="{{'phone' | translate }} " class="form-control " type="number">
+					<div *ngIf="(contactForm.get('phone')?.errors && contactForm.get('phone')?.touched) || formError" class="text-danger my-2">
 						<p i18n *ngIf="contactForm.get('phone')?.errors?.['required']">{{'phone_required' | translate }}</p>
 						<p i18n *ngIf="contactForm.get('phone')?.errors?.['maxlength']">{{'max_length' | translate }}</p>
 					</div>
 					<label for="name"></label>
 					<textarea formControlName="message" style="height: 100px;" class="form-control " placeholder="{{'leave_your_message' | translate }}"></textarea>
-					<div *ngIf="contactForm.get('message')?.errors && (contactForm.get('message')?.touched)" class="alert border border-danger my-2">
+					<div *ngIf="(contactForm.get('message')?.errors && contactForm.get('message')?.touched) || formError" class="text-danger my-2">
 						<p i18n *ngIf="contactForm.get('message')?.errors?.['required']">{{'message_required' | translate }}</p>
 					</div>
 					<button i18n class="btn btn-info btn-submit mt-3 py-2 px-4 float-end">{{'send' | translate }}</button>

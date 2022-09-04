@@ -220,10 +220,7 @@
 
 	.test-title {
 		width: 100%;
-	}
-
-	.test-title {
-		width: 100%;
+		text-align: center;
 	}
 
 	.test-img {
@@ -235,7 +232,6 @@
 		align-items: center;
 		justify-content: center;
 		flex-direction: column-reverse;
-		height: 178px;
 	}
 
 	.test-title h6 {

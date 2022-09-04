@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { HomeService } from '../home.service';
-import * as AOS from 'aos';
 import { TranslateService } from '@ngx-translate/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 
@@ -61,7 +60,6 @@ export class AboutComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    AOS.init();
   }
 
 }

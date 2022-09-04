@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewChecked } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
+import { BehaviorSubject } from 'rxjs';
 import { ContactService } from '../contact.service';
 import { HomeService } from '../home.service';
-import * as AOS from 'aos';
 
 
 @Component({
@@ -40,6 +40,7 @@ export class ContactComponent implements OnInit {
   }
   error: boolean = false;
   success: boolean = false;
+  formError: BehaviorSubject<boolean> = new BehaviorSubject(false);
 
 
   contactForm: FormGroup = new FormGroup({
@@ -55,17 +56,23 @@ export class ContactComponent implements OnInit {
         next: () => {
           this.success = true;
           this.error = false;
+          contactForm.reset();
+          this.formError.next(false);
         },
         error: () => {
           this.error = true;
           this.success = false;
         }
       })
+    } else {
+      this.formError.next(true);
     }
   }
 
+
+
   ngOnInit(): void {
-    AOS.init();
   }
+
 
 }

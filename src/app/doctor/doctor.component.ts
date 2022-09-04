@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { HomeService } from '../home.service';
-import * as AOS from 'aos';
 
 
 @Component({
@@ -32,7 +31,6 @@ export class DoctorComponent implements OnInit {
 
 
   ngOnInit(): void {
-    AOS.init();
   }
 
 }

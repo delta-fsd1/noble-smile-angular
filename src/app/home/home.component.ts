@@ -5,7 +5,6 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 import { AppointmentService } from '../appointment.service';
 import { HomeService } from '../home.service';
 import { SettingsService } from '../settings.service';
-import * as AOS from 'aos';
 
 
 
@@ -26,6 +25,7 @@ export class HomeComponent implements OnInit {
   settings: any;
   settingsArray: any = [];
   servicesArray: any = [];
+  formError: boolean = false;
 
   constructor(private _AppointmentService: AppointmentService, public _HomeService: HomeService, private _SettingsService: SettingsService, public translate: TranslateService) {
     this._HomeService.getHomeData(this.translate.getDefaultLang()).subscribe({
@@ -55,16 +55,22 @@ export class HomeComponent implements OnInit {
   });
 
   submitAppointment(appointmentForm: FormGroup) {
-    this._AppointmentService.getAppointment(appointmentForm.value).subscribe({
-      next: () => {
-        this.success = true;
-        this.error = false;
-      },
-      error: () => {
-        this.error = true;
-        this.success = false;
-      }
-    })
+    if (appointmentForm.valid) {
+      this._AppointmentService.getAppointment(appointmentForm.value).subscribe({
+        next: () => {
+          this.success = true;
+          this.error = false;
+          appointmentForm.reset();
+          this.formError = false;
+        },
+        error: () => {
+          this.error = true;
+          this.success = false;
+        }
+      })
+    } else {
+      this.formError = true;
+    }
   }
 
 
@@ -96,7 +102,6 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    AOS.init();
   }
 
 }
