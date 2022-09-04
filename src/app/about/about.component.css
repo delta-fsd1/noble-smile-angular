@@ -91,31 +91,33 @@
 	line-height: 1.5em;
 	font-size: 1.5625rem;
 }
+
 @media (min-width: 991px) {
 
-.test-title-img {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-}
+	.test-title-img {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
 
-.test-title {
-	width: 75%;
-}
+	.test-title {
+		width: 75%;
+	}
 
-.test-img {
-	width: 50%;
-}
+	.test-img {
+		width: 50%;
+	}
 
-.test-title h6 {
-	padding-top: 5px;
-	padding-bottom: 5px;
-	color: #29a8df;
-	font-weight: 700;
-	line-height: 1.5em;
-	font-size: 1.5625rem;
-}
-.client img {
-	width: 30%;
-}
+	.test-title h6 {
+		padding-top: 5px;
+		padding-bottom: 5px;
+		color: #29a8df;
+		font-weight: 700;
+		line-height: 1.5em;
+		font-size: 1.5625rem;
+	}
+
+	.client img {
+		width: 30%;
+	}
 }

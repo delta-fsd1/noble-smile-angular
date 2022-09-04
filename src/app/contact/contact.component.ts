@@ -3,7 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 import { ContactService } from '../contact.service';
 import { HomeService } from '../home.service';
-
+import * as AOS from 'aos';
 
 
 @Component({
@@ -13,12 +13,12 @@ import { HomeService } from '../home.service';
 })
 export class ContactComponent implements OnInit {
 
-  lang:string = 'en';
-  address:any;
-  email:any;
-  phone:any;
+  lang: string = 'en';
+  address: any;
+  email: any;
+  phone: any;
 
-  constructor(private _ContactService:ContactService, public _HomeService:HomeService, public translate: TranslateService) {
+  constructor(private _ContactService: ContactService, public _HomeService: HomeService, public translate: TranslateService) {
     this._HomeService.getHomeData(this.translate.getDefaultLang()).subscribe({
       next: (response) => {
         this._HomeService.homeData = response.data;
@@ -50,13 +50,13 @@ export class ContactComponent implements OnInit {
   })
 
   submitContactForm(contactForm: FormGroup) {
-    if(contactForm.valid) {
+    if (contactForm.valid) {
       this._ContactService.sendMessage(contactForm.value).subscribe({
-        next: ()=>{
+        next: () => {
           this.success = true;
           this.error = false;
         },
-        error: ()=>{
+        error: () => {
           this.error = true;
           this.success = false;
         }
@@ -65,6 +65,7 @@ export class ContactComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    AOS.init();
   }
 
 }

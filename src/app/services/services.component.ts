@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { HomeService } from '../home.service';
-
+import * as AOS from 'aos';
 
 @Component({
   selector: 'app-services',
@@ -10,11 +10,11 @@ import { HomeService } from '../home.service';
 })
 export class ServicesComponent implements OnInit {
   lang: string = 'en';
-  services:any;
-  servicesArray:any = [];
+  services: any;
+  servicesArray: any = [];
 
 
-  constructor(public _HomeService:HomeService, public translate: TranslateService) {
+  constructor(public _HomeService: HomeService, public translate: TranslateService) {
     this._HomeService.getHomeData(this.translate.getDefaultLang()).subscribe({
       next: (response) => {
         this._HomeService.homeData = response.data;
@@ -30,6 +30,7 @@ export class ServicesComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    AOS.init();
   }
 
 }

@@ -3,7 +3,7 @@ footer {
 }
 
 footer h4 {
-	color: #29a8df;
+	color: #1b6e92;
 }
 
 #footer_top {
@@ -26,11 +26,13 @@ footer h4 {
 .logo-div p {
 	padding-right: 20px;
 	padding-top: 20px;
-	text-align: justify!important;
+	text-align: justify !important;
 }
+
 .service-lists .service .fas {
-	color: rgb(41, 168, 223)!important;
+	color: rgb(41, 168, 223) !important;
 }
+
 .social-facebook {
 	padding: 20px;
 	width: 30px;

@@ -23,9 +23,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 
 import { routes } from './app-routing.module';
 import {LocalizeRouterModule} from '@gilsdav/ngx-translate-router';
-// import { LocalizeRouterModule } from '@gilsdav/ngx-translate-router/lib/localize-router.module';
 import { LocalizeParser, LocalizeRouterSettings, ManualParserLoader } from '@gilsdav/ngx-translate-router';
-// import { LocalizeRouterHttpLoader } from '@gilsdav/ngx-translate-router-http-loader';
 import { Location } from '@angular/common';
 
 @NgModule({

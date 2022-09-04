@@ -1,12 +1,11 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { FormGroup, FormControl, NgModel, Validators } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { AppointmentService } from '../appointment.service';
 import { HomeService } from '../home.service';
 import { SettingsService } from '../settings.service';
-
-
+import * as AOS from 'aos';
 
 
 
@@ -96,12 +95,8 @@ export class HomeComponent implements OnInit {
     nav: false
   }
 
-
-
-
-
-
   ngOnInit(): void {
+    AOS.init();
   }
 
 }

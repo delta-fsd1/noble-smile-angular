@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { HomeService } from '../home.service';
-
+import * as AOS from 'aos';
 
 @Component({
   selector: 'app-team',
@@ -24,6 +24,7 @@ export class TeamComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    AOS.init();
   }
 
 }

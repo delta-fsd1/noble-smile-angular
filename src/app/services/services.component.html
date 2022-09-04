@@ -10,11 +10,11 @@
 	</div>
 </div>
 <div class="container py-5 my-5">
-	<div class="row d-flex justify-content-center">
+	<div data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000" class="row d-flex justify-content-center">
 		<h2 i18n class="text-center pb-4">{{'our_services' | translate }}</h2>
 		<div *ngFor="let service of _HomeService.servicesContainer" class="col-md-4 py-3 col-sm-12">
 			<div class="card h-100 services-container">
-				<img class="card-img-top" [src]="service.image" alt="">
+				<img class="card-img-top" [src]="service.image" alt="dental service">
 				<div class="card-body service-text ms-1">
 					<h6 class="card-title">{{service.title}}</h6>
 					<span class="card-text" [innerHTML]="service.description"></span>

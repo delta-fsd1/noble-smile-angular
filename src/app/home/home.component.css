@@ -61,10 +61,12 @@
 		margin-right: 5px;
 		margin-left: 5px;
 	}
+
 	#home-about {
 		padding-top: 4rem;
 		padding-bottom: 4rem;
 	}
+
 	.reviews-btn {
 		background-color: #fff;
 		color: #181818;
@@ -157,6 +159,7 @@
 	.carousel-caption {
 		bottom: 0;
 	}
+
 	.carousel-caption {
 		padding: 1rem;
 		margin-left: 0;
@@ -196,7 +199,7 @@
 		margin: 3rem 0 0 0;
 		padding-bottom: 3rem;
 	}
-	
+
 
 	.about-text span,
 	.about-text h2,
@@ -275,6 +278,7 @@
 		padding-top: 1rem;
 		padding-bottom: 2.5rem;
 	}
+
 	.client img {
 		width: 30%;
 	}
@@ -283,7 +287,7 @@
 
 .team-service-btn {
 	background-color: #29a8df;
-	color: #fff;
+	color: #000;
 	transition: all 0.4s linear;
 	border: 0;
 	box-shadow: 1px 1px 10px 1px rgb(34 34 34 / 20%);
@@ -321,7 +325,7 @@
 .team-btn {
 	padding: 1em 1.8em;
 	background-color: #fff;
-	color: #29a8df;
+	color: #175f7e;
 	outline: none;
 	border: 0;
 	cursor: pointer;
@@ -390,7 +394,7 @@
 
 .btn-appointment {
 	background-color: #29a8df;
-	color: #fff;
+	color: #0e0e0e;
 	transition: all 0.4s linear;
 	border: 0;
 	box-shadow: 1px 1px 10px 1px rgb(34 34 34 / 20%);

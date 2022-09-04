@@ -15,19 +15,16 @@ export class AppComponent {
   title = 'noble-smile';
 
 
-  constructor(private spinner: NgxSpinnerService, public translate: TranslateService, private localizeService: LocalizeRouterService, ) {
+  constructor(private spinner: NgxSpinnerService, public translate: TranslateService, private localizeService: LocalizeRouterService,) {
     translate.addLangs(['en', 'ar']);
-    // translate.setDefaultLang('en');
-    
-    
-      document.getElementsByTagName("html")[0].setAttribute("lang", this.translate.getDefaultLang());
+
+
+    document.getElementsByTagName("html")[0].setAttribute("lang", this.translate.getDefaultLang());
     if (this.translate.getDefaultLang() === 'ar') {
       document.getElementsByTagName("html")[0].setAttribute("dir", "rtl");
-      // this.langKey = localStorage.setItem("langKey", lang);
     }
     else {
       document.getElementsByTagName("html")[0].setAttribute("dir", "ltr");
-      // this.langKey = localStorage.setItem("langKey", lang);
     }
 
 

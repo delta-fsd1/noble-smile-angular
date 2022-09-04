@@ -9,10 +9,10 @@ import { Observable } from 'rxjs';
 })
 export class HomeService {
 
-  constructor(private _HttpClient:HttpClient) {}
-  
-  aboutArray:any = [];
-  homeData: any= [];
+  constructor(private _HttpClient: HttpClient) { }
+
+  aboutArray: any = [];
+  homeData: any = [];
   teamContainer: any = [];
   teamArray: any = [];
   servicesArray: any = [];
@@ -25,7 +25,7 @@ export class HomeService {
   htmlDirection: string = 'lrt'
   doctorId: any;
 
-  getHomeData(lang:string):Observable<any> {
+  getHomeData(lang: string): Observable<any> {
     const httpOptions = {
       headers: new HttpHeaders().set('content-type', 'application/json').set('Accept-Language', lang)
     }
@@ -34,11 +34,11 @@ export class HomeService {
   };
 
 
-  getSettings(lang:string):Observable<any>{
+  getSettings(lang: string): Observable<any> {
     const httpOptions = {
       headers: new HttpHeaders().set('content-type', 'application/json').set('Accept-Language', lang)
     }
     return this._HttpClient.get('https://demoyoursite.net/boula/basma/public/api/setting', httpOptions);
   }
-  
+
 }

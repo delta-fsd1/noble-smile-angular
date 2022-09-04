@@ -9,10 +9,9 @@
 		</nav>
 	</div>
 </div>
-
 <section class="our-team py-5">
 	<div class="container py-5">
-		<div class="row d-flex align-items-center justify-content-center">
+		<div data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000" class="row d-flex align-items-center justify-content-center">
 			<div *ngFor="let doctor of _HomeService.teamContainer" class="col-md-4 col-sm-12 my-3">
 				<div class="team-member shadow">
 					<div class="team-img position-relative w-100">
@@ -28,13 +27,13 @@
 						<div class="d-flex align-items-center justify-content-between">
 							<a i18n routerLink="/single-doctor" class="text-decoration-none team-btn" [routerLink]="['/doctor', doctor.id] | localize">{{'read_more' | translate }}</a>
 							<div class="doctor-social-icons d-flex align-items-center justify-content-center">
-								<a [href]="doctor.facebook" class="facebook">
+								<a aria-label="facebook" [href]="doctor.facebook" class="facebook">
 									<i class="fa-brands fa-facebook"></i>
 								</a>
-								<a [href]="doctor.twitter" class="twitter">
+								<a aria-label="twitter" [href]="doctor.twitter" class="twitter">
 									<i class="fa-brands fa-twitter"></i>
 								</a>
-								<a [href]="doctor.linkedin" class="linkedin">
+								<a aria-label="linkedin" [href]="doctor.linkedin" class="linkedin">
 									<i class="fa-brands fa-linkedin-in"></i>
 								</a>
 							</div>
