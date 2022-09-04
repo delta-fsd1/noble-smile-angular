@@ -1,0 +1,150 @@
+.breadcrumb-bg {
+	background-image: url(../../assets/images/about-us-breadcrumb.jpg);
+	padding: 15rem 7rem;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	height: 400px;
+}
+
+.breadcrumb-bg::before {
+	background: rgba(34, 37, 51, 0.1) none repeat scroll 0 0;
+	content: "";
+	padding: 15rem 7rem;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	width: 100%;
+}
+
+.breadcrumb-item {
+	color: #4fffd9;
+	font-size: large;
+}
+
+.breadcrumb-item a {
+	color: white;
+	transition: all 0.2s linear;
+}
+
+.breadcrumb-item:hover a {
+	color: #4fffd9;
+}
+
+.breadcrumb-headline {
+	color: #29a8df;
+	font-weight: bolder;
+	position: relative;
+}
+
+.breadcrumb-headline::after {
+	content: '';
+	position: absolute;
+	right: 0;
+	bottom: 5px;
+	left: 0;
+	width: 100%;
+	background-color: #29a8df;
+	height: 5px;
+}
+
+
+.team-service-btn {
+	background-color: #29a8df;
+	color: #fff;
+	transition: all 0.4s linear;
+	border: 0;
+	box-shadow: 1px 1px 10px 1px rgb(34 34 34 / 20%);
+}
+
+.team-service-btn:hover {
+	background-color: rgba(16, 64, 153, 0.6);
+	transform: translateY(-3px);
+	background-position: 99% 0;
+}
+
+.team-member {
+	background-color: rgba(225, 232, 240, 1);
+}
+
+.team-img:hover .img-layer {
+	opacity: 1;
+}
+
+.team-img img {
+	transition: transform 650ms ease-in-out, filter 650ms ease-in-out;
+}
+
+.team-img:hover img {
+	transform: scale3d(1.1, 1.1, 1.1);
+	opacity: 1;
+	width: 100%;
+}
+
+.team-img {
+	overflow: hidden;
+}
+
+
+.team-btn {
+	padding: 1em 1.8em;
+	background-color: #fff;
+	color: #29a8df;
+	outline: none;
+	border: 0;
+	cursor: pointer;
+	box-shadow: 1px 1px 10px 1px rgb(34 34 34 / 20%);
+	transition: all 300ms ease;
+}
+
+.team-btn:hover {
+	box-shadow: 1px 1px 10px 1px rgb(34 34 34 / 50%);
+}
+
+.img-layer {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: rgba(0, 175, 137, 0.6);
+	pointer-events: none;
+	opacity: 0;
+	transition: all 300ms ease;
+}
+
+.doctor-social-icons {
+	font-size: 28px;
+}
+
+.doctor-social-icons a {
+	margin: 0 10px;
+	color: #000;
+}
+
+.doctor-social-icons .facebook .fa-facebook,
+.doctor-social-icons .twitter .fa-twitter,
+.doctor-social-icons .linkedin .fa-linkedin-in {
+	transition: all 0.4s ease;
+	cursor: pointer;
+}
+
+.doctor-social-icons .facebook:hover .fa-facebook {
+	color: #3b5998;
+}
+
+.doctor-social-icons .twitter:hover .fa-twitter {
+	color: #1da1f2;
+}
+
+.doctor-social-icons .linkedin:hover .fa-linkedin-in {
+	color: #0a66c2;
+
+}

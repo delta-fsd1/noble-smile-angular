@@ -1,0 +1,25 @@
+.nav-link {
+	color: white !important;
+}
+
+nav a {
+	font-weight: bolder;
+	font-size: large;
+}
+
+.test {
+	color: #4fffd9 !important;
+	font-weight: 900 !important;
+}
+
+.navbar-brand {
+	width: 200px;
+}
+
+.nav-light-color {
+	color: white;
+}
+
+.nav-dark-color {
+	color: black;
+}

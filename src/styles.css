@@ -1,0 +1,39 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap'); */
+
+body {
+	font-family: 'Cairo', sans-serif!important;
+	line-height: 1.8rem;
+}
+/* html[dir="rtl"] body {
+    font-family: 'Cairo', sans-serif!important;
+} */
+
+.text-justify {
+	text-align: justify;
+}
+
+h1, h2 ,h3, h4, h5 ,h6 {
+	font-weight: bold;
+}
+
+@media (min-width: 991px) {
+	section {
+		padding-top: 2.5rem;
+	}
+}
+
+@media (max-width: 991px){
+	section {
+		padding-top: 0;
+	}
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.testimonials-carousel {
+	direction: ltr;
+}
+html[dir="rtl"] .testimonials-caption {
+	direction: rtl!important;
+}

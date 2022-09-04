@@ -1,0 +1,72 @@
+<footer>
+	<section id="footer_top" class="d-flex align-items-center justify-content-center">
+		<div class="container-fluid mx-0 px-4">
+			<div class="row">
+				<div class="col-md-3 col-sm-12 logo-div">
+					<div class="logo-image">
+						<img class="img-fluid" [src]="_HomeService.settingsArray.logo" alt="Noble Smile Logo" />
+					</div>
+					<div class="list-unstyled text-justify pb-4 pe-4" [innerHtml]="_HomeService.settingsArray.footer_description">
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-12 service-lists">
+					<h4 i18n class="ps-2">{{'most_services' | translate }}</h4>
+						<ul  class="list-unstyled px-2">
+							<li *ngFor="let service of _HomeService.footerServices" class="service py-1">
+								<a class="text-decoration-none"><i class="fas fa-stethoscope px-1"></i>{{service.title}}</a>
+							</li>
+						</ul>
+				</div>
+				<div class="col-md-3 col-sm-12 contacts-list">
+					<h4 i18n class="ps-2">{{'contact_us' | translate }}</h4>
+					<ul class="list-unstyled px-2">
+						<li class="contact  py-2">
+							<a class="text-decoration-none"><i class="fa-solid fa-location-dot px-1"></i> {{_HomeService.settingsArray.address}}</a>
+						</li>
+						<li class="contact  py-2">
+							<a class="text-decoration-none" [href]="'mailto:'+_HomeService.settingsArray.email"><i class="fa-solid fa-envelope px-1"></i> {{_HomeService.settingsArray.email}} </a>
+						</li>
+						<li class="contact  py-2">
+							<i class="fa-solid fa-mobile-screen-button px-1"></i><a class="text-decoration-none" dir="ltr" [href]="'tel:' + _HomeService.settingsArray.phone"> {{_HomeService.settingsArray.phone}}  </a>
+						</li>
+						<li class="contact  py-2">
+							<a class="text-decoration-none"><i class="fa-solid fa-clock px-1"></i> {{_HomeService.settingsArray.working_hours}} </a>
+						</li>
+					</ul>
+				</div>
+				<div class="col-md-3 col-sm-12 socials-list">
+					<h4 i18n class="ps-2">{{'social_networks' | translate }}</h4>
+					<!-- <p i18n class="ps-2">Visit us on these social links</p> -->
+					<div class="d-flex align-items-center justify-content-start py-1 ps-2">
+						<a noreferrer target="_blank" [href]="_HomeService.settingsArray.facebook" class="social-icons social-facebook me-1"><i class="fa-brands fa-facebook-f"></i></a>
+						<a noreferrer target="_blank" [href]="_HomeService.settingsArray.twitter" class="social-icons social-twitter me-1"><i class="fa-brands fa-twitter"></i></a>
+						<a noreferrer target="_blank" [href]="_HomeService.settingsArray.instagram" class="social-icons social-instagram me-1"><i class="fa-brands fa-instagram"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<div id="copyrights" class="container-fluid">
+		<div class="row d-flex justify-content-center">
+			<div class="col-md-6 copyrights-text">
+				<p class="pt-3">{{_HomeService.settingsArray.copyrights}}</p>
+			</div>
+			<div class="col-md-6 copyrights-links">
+				<ul class="list-unstyled d-flex align-items-center justify-content-center flex-row pt-3">
+					<li class="px-2 border-white border-end">
+						<a i18n class="text-decoration-none" [routerLink]="['/about' | localize]">{{'about' | translate }}</a>
+					</li>
+					<li class="px-2 border-white border-end">
+						<a i18n class="text-decoration-none" [routerLink]="['/team' | localize]">{{'our_team' | translate }}</a>
+					</li>
+					<li class="px-2 border-white border-end">
+						<a i18n class="text-decoration-none" [routerLink]="['/services' | localize]">{{'services' | translate }}</a>
+					</li>
+					<li class="px-2 border-white border-end">
+						<a i18n class="text-decoration-none" [routerLink]="['/contact' | localize]">{{'contact_us' | translate }}</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</footer>

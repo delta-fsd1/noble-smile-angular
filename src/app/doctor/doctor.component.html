@@ -1,0 +1,27 @@
+<div class="container-fluid breadcrumb-bg position-relative mb-4">
+	<div class="row">
+		<nav style="--bs-breadcrumb-divider: '>';" class="position-relative d-flex align-items-center justify-content-center flex-column" aria-label="breadcrumb">
+			<h1 i18n class="text-capitalize text-center pb-3 breadcrumb-headline">{{'our_team' | translate }}</h1>
+			<ol class="breadcrumb">
+				<li i18n class="breadcrumb-item"><a class="text-decoration-none fw-bolder" [routerLink]="['/home' | localize]">{{'home' | translate }}</a></li>
+				<li i18n class="breadcrumb-item active fw-bolder" aria-current="page"> / {{'our_team' | translate }}</li>
+			</ol>
+		</nav>
+	</div>
+</div>
+<div class="container py-5">
+	<div class="row shadow p-5 rounded">
+		<div class="col-md-6 col-sm-12">
+			<img class="img-fluid" [src]="_HomeService.singleDoctor?.image" [alt]="_HomeService.singleDoctor?.fname+' Image'">
+		</div>
+		<div class="col-md-6 col-sm-12 d-flex align-items-start flex-column">
+			<div class="doctor-top mb-2">
+				<h3>{{_HomeService.singleDoctor?.fname}}</h3>
+				<span>{{_HomeService.singleDoctor?.subtitle}}</span>
+			</div>
+			<div class="doctor-bottom">
+				<div class="text-justify" [innerHTML]="_HomeService.singleDoctor?.description"></div>
+			</div>
+		</div>
+	</div>
+</div>

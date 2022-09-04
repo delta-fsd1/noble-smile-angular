@@ -1,0 +1,23 @@
+<nav appBackgroundColor class="navbar navbar-expand-lg">
+	<div class="container">
+		<a class="navbar-brand" routerLink="/home">
+			<img class="img-fluid" [src]="_HomeService.settingsArray.logo" alt="Noble Smile Logo"  [routerLink]="['/home' | localize]"/>
+		</a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse px-3" id="navbarNavAltMarkup">
+			<div class="navbar-nav ms-auto">
+				<a i18n class="nav-link" [routerLinkActive]="'test'" [routerLink]="['/home' | localize]">{{'home' | translate }}</a>
+				<a i18n class="nav-link" [routerLinkActive]="'test'" [routerLink]="['/about' | localize]">{{'about' | translate }}</a>
+				<a i18n class="nav-link" [routerLinkActive]="'test'" [routerLink]="['/team' | localize]">{{'team' | translate }}</a>
+				<a i18n class="nav-link" [routerLinkActive]="'test'" [routerLink]="['/services' | localize]">{{'services' | translate }}</a>
+				<a i18n class="nav-link" [routerLinkActive]="'test'" [routerLink]="['/contact' | localize]">{{'contact_us' | translate }}</a>
+			</div>
+			<div class="d-flex align-items-center justify-content-between">
+				<a i18n class="nav-link mx-2" *ngIf="translate.getDefaultLang() === 'en' " style="cursor: pointer;"  (click)="switchLang('ar')">العربية</a>
+				<a i18n class="nav-link mx-2" *ngIf="translate.getDefaultLang() === 'ar' " style="cursor: pointer;"  (click)="switchLang('en')">English</a>
+			</div>
+		</div>
+	</div>
+</nav>

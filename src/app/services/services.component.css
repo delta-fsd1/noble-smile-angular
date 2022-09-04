@@ -1,0 +1,91 @@
+.breadcrumb-bg {
+	background-image: url(../../assets/images/about-us-breadcrumb.jpg);
+	padding: 15rem 7rem;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	height: 400px;
+}
+
+.breadcrumb-bg::before {
+	background: rgba(34, 37, 51, 0.1) none repeat scroll 0 0;
+	content: "";
+	padding: 15rem 7rem;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	width: 100%;
+}
+
+.breadcrumb-item {
+	color: #4fffd9;
+	font-size: large;
+}
+
+.breadcrumb-item a {
+	color: white;
+	transition: all 0.2s linear;
+}
+
+.breadcrumb-item:hover a {
+	color: #4fffd9;
+}
+
+.breadcrumb-headline {
+	color: #29a8df;
+	font-weight: bolder;
+	position: relative;
+}
+
+.breadcrumb-headline::after {
+	content: '';
+	position: absolute;
+	right: 0;
+	bottom: 5px;
+	left: 0;
+	width: 100%;
+	background-color: #29a8df;
+	height: 5px;
+}
+
+.service-text {
+	text-align: justify;
+}
+
+@media (min-width: 991px) {
+	.services-container {
+		display: flex;
+		justify-content: center;
+		padding: 0px 0 5px 0;
+		box-shadow: 1px 1px 10px 1px rgb(34 34 34 / 20%);
+	}
+}
+
+@media (max-width: 991px) {
+	.services-container {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		padding: 0px 0 5px 0;
+		box-shadow: 1px 1px 10px 1px rgb(34 34 34 / 20%);
+	}
+
+	.services-container .service-icon ,
+	.services-container .service-text {
+		padding-bottom: 10px;
+	}
+}
+
+.service-text .card-title {
+	border-bottom: 2px solid #29a8df;
+    padding-bottom: 0.4rem;
+    width: 60%;
+}

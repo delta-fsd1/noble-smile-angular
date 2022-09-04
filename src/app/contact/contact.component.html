@@ -1,0 +1,69 @@
+<div class="container-fluid breadcrumb-bg position-relative">
+	<div class="row">
+		<nav style="--bs-breadcrumb-divider: '>';" class="position-relative d-flex align-items-center justify-content-center flex-column" aria-label="breadcrumb">
+			<h1 i18n class="text-capitalize text-center pb-3 breadcrumb-headline">{{'contact_us' | translate }}</h1>
+			<ol class="breadcrumb">
+				<li i18n class="breadcrumb-item"><a class="text-decoration-none fw-bolder" [routerLink]="['/home' | localize]">{{'home' | translate }}</a></li>
+				<li i18n class="breadcrumb-item active fw-bolder" aria-current="page"> / {{'contact_us' | translate }}</li>
+			</ol>
+		</nav>
+	</div>
+</div>
+<div class="containter contact-information  py-5">
+	<div class="row py-5 d-flex align-items-center justify-content-center m-0">
+		<div class="col-md-6 p-4 text-center mb-auto">
+			<h2 i18n class="text-capitalize mb-5">{{'contact_details' | translate }}</h2>
+			<ul class="list-unstyled contact-list ms-auto ps-2">
+				<li class="contact  py-3">
+					<h4 i18n class="fw-bold">{{'address' | translate }}</h4>
+					<a class="text-decoration-none text-center text-dark"> {{address}}</a>
+				</li>
+				<li class="contact  py-3">
+					<h4 i18n class="fw-bold">{{'email' | translate }}</h4>
+					<a [href]="'mailto:'+ email" class="text-decoration-none text-center text-dark"> {{email}}</a>
+				</li>
+				<li class="contact  py-3">
+					<h4 i18n class="fw-bold">{{'phone' | translate }}</h4>
+					<a [href]="'tel:'+ phone" class="text-decoration-none text-center text-dark"> {{phone}}</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col-md-6 ">
+			<div class="shadow-lg d-flex align-items-center justify-content-center flex-column w-100 p-3" style="background-color: rgb(41,168,223);">
+				<h2 i18n class="text-center pb-3">{{'send_message' | translate }}</h2>
+				<form [formGroup]="contactForm" class="form-group w-75 w-sm-100" (ngSubmit)="submitContactForm(contactForm)" action="">
+					<div i18n *ngIf="error" class="alert alert-danger"> {{'something_went_wrong' | translate }} </div>
+					<div i18n *ngIf="success" class="alert alert-success"> {{'message_sent_successfully' | translate }} </div>
+					<label for="name"></label>
+					<input formControlName="name" placeholder="{{'name' | translate }}" class="form-control " type="text">
+					<div *ngIf="contactForm.get('name')?.errors && (contactForm.get('name')?.touched)" class="alert border border-danger my-2">
+						<p i18n *ngIf="contactForm.get('name')?.errors?.['required']">{{'name_required' | translate }}</p>
+						<p i18n *ngIf="contactForm.get('name')?.errors?.['minlength']">{{'min_length' | translate }}</p>
+						<p i18n *ngIf="contactForm.get('name')?.errors?.['maxlength']">{{'max_length' | translate }}</p>
+					</div>
+					<label for="name"></label>
+					<input formControlName="email" placeholder="{{'email' | translate }}" class="form-control " type="email">
+					<div *ngIf="contactForm.get('email')?.errors && (contactForm.get('email')?.touched)" class="alert border border-danger my-2">
+						<p i18n *ngIf="contactForm.get('email')?.errors?.['email']">{{'email_valid' | translate }}</p>
+					</div>
+					<label for="name"></label>
+					<input formControlName="phone" placeholder="{{'phone' | translate }} {{'optional' | translate }}" class="form-control " type="number">
+					<div *ngIf="contactForm.get('phone')?.errors && (contactForm.get('phone')?.touched)" class="alert border border-danger my-2">
+						<p i18n *ngIf="contactForm.get('phone')?.errors?.['required']">{{'phone_required' | translate }}</p>
+						<p i18n *ngIf="contactForm.get('phone')?.errors?.['maxlength']">{{'max_length' | translate }}</p>
+					</div>
+					<label for="name"></label>
+					<textarea formControlName="message" style="height: 100px;" class="form-control " placeholder="{{'leave_your_message' | translate }}"></textarea>
+					<div *ngIf="contactForm.get('message')?.errors && (contactForm.get('message')?.touched)" class="alert border border-danger my-2">
+						<p i18n *ngIf="contactForm.get('message')?.errors?.['required']">{{'message_required' | translate }}</p>
+					</div>
+					<button i18n class="btn btn-info btn-submit mt-3 py-2 px-4 float-end">{{'send' | translate }}</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container-fluid pb-0 mb-0">
+	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3624.0130933273686!2d46.68432121537475!3d24.726430756704993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f02c8f949e1bd%3A0x3f2c572a4c4cffdd!2sAsh%20Shaikh%20Abdullah%20Al%20Anqari%2C%20Al%20Wurud%2C%20Riyadh%20Saudi%20Arabia!5e0!3m2!1sen!2seg!4v1660748561646!5m2!1sen!2seg"
+			  width="100%" height="450" style="border:0;margin-bottom: -7px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>

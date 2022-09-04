@@ -1,0 +1,452 @@
+#home_slider img {
+	height: 85vh;
+	object-fit: fill;
+}
+
+.test-title-img {
+	background-color: rgb(240, 244, 247);
+}
+
+
+@media (min-width: 991px) {
+	.carousel-caption {
+		bottom: 30% !important;
+		right: auto;
+		text-align: start;
+		max-width: 600px;
+	}
+
+	.w-lg-50 {
+		width: 50%;
+	}
+
+	.card {
+		max-width: 540px;
+	}
+
+	.carousel-caption h1 {
+		font-weight: inherit;
+		font-size: 4rem !important;
+		color: #0896d3;
+		font-weight: bolder;
+	}
+
+	.carousel-caption p {
+		color: rgba(0, 0, 0, 0.7);
+	}
+
+	.carousel-caption a {
+		font-size: 1.5rem;
+	}
+
+	.carousel-caption {
+		padding: 45px;
+		margin-left: 0;
+		margin-right: auto;
+		background: rgba(255, 255, 255, 0.6);
+		box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+		backdrop-filter: blur(10px);
+		-webkit-backdrop-filter: blur(5px);
+		border: 1px solid rgba(255, 255, 255, 0.3);
+
+	}
+
+	.carousel-caption {
+		bottom: 0;
+	}
+
+	.carousel-caption .team-service-btn,
+	.carousel-caption .reviews-btn {
+		padding: 10px 20px;
+		margin-right: 5px;
+		margin-left: 5px;
+	}
+	#home-about {
+		padding-top: 4rem;
+		padding-bottom: 4rem;
+	}
+	.reviews-btn {
+		background-color: #fff;
+		color: #181818;
+		transition: all 0.4s linear;
+	}
+
+	.reviews-btn:hover {
+		background-color: transparent;
+		color: #fff;
+		transform: translateY(-3px);
+	}
+
+	.test-title-img {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		height: 178px;
+	}
+
+	.test-title {
+		width: 75%;
+	}
+
+	.test-img {
+		width: 50%;
+	}
+
+	.test-title h6 {
+		padding-top: 5px;
+		padding-bottom: 5px;
+		color: #29a8df;
+		font-weight: 700;
+		line-height: 1.5em;
+		font-size: 1.5625rem;
+	}
+
+	.call-to-action {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	.mobile-responsive-book-appointment {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.mobile-responsive-book-appointment form {
+		width: 75%;
+	}
+
+	.carousel-item {
+		height: 1005px !important;
+	}
+
+	.carousel-item img {
+		height: 100%;
+	}
+}
+
+
+
+.job-desc {
+	padding: 0 0 20px 0;
+}
+
+
+
+.test-img img {
+	width: 100%;
+	height: 100%;
+}
+
+@media (max-width: 991px) {
+	.carousel-caption h1 {
+		font-weight: inherit;
+		font-size: 36px !important;
+		color: #29a8df;
+		font-weight: bolder;
+	}
+
+	.carousel-caption .inner-text {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+	}
+
+	.carousel-caption {
+		bottom: 0;
+	}
+	.carousel-caption {
+		padding: 1rem;
+		margin-left: 0;
+		margin-right: auto;
+		background: rgba(255, 255, 255, 0.2);
+		box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+		backdrop-filter: blur(10px);
+		-webkit-backdrop-filter: blur(5px);
+		border: 1px solid rgba(255, 255, 255, 0.3);
+		margin-bottom: 2rem;
+
+	}
+
+	.carousel-caption .team-service-btn,
+	.carousel-caption .reviews-btn {
+		padding: 10px 20px;
+		margin-right: 5px;
+		margin-left: 5px;
+		font-size: 8px !important;
+	}
+
+	.carousel-item {
+		height: 300px !important;
+	}
+
+	.carousel-item img {
+		height: 100%;
+	}
+
+	.reviews-btn {
+		background-color: #0a66c2;
+		color: #fff;
+		border: 0 !important;
+	}
+
+	#home-about {
+		margin: 3rem 0 0 0;
+		padding-bottom: 3rem;
+	}
+	
+
+	.about-text span,
+	.about-text h2,
+	.about-text .text-justify {
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+
+
+	.service-icon {
+		width: 100% !important;
+	}
+
+	.service-text {
+		text-align: center;
+		padding-top: 5px;
+	}
+
+	.test-title {
+		width: 100%;
+	}
+
+	.test-title {
+		width: 100%;
+	}
+
+	.test-img {
+		width: 100%;
+	}
+
+	.test-title-img {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column-reverse;
+		height: 178px;
+	}
+
+	.test-title h6 {
+		padding-top: 5px;
+		padding-bottom: 5px;
+		color: #29a8df;
+		font-weight: 700;
+		line-height: 1.5em;
+		font-size: 1.2rem;
+	}
+
+	section {
+		padding-top: 1.5rem;
+	}
+
+	.call-to-action {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+	}
+
+	.call-now-number {
+		font-size: 1.4rem;
+		padding: 5px 0;
+	}
+
+	.mobile-responsive-book-appointment {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column-reverse;
+	}
+
+	.mobile-responsive-book-appointment .col-sm-12,
+	.mobile-responsive-book-appointment form {
+		width: 100%;
+	}
+
+	#call-to-action .container {
+		padding-top: 1rem;
+		padding-bottom: 2.5rem;
+	}
+	.client img {
+		width: 30%;
+	}
+}
+
+
+.team-service-btn {
+	background-color: #29a8df;
+	color: #fff;
+	transition: all 0.4s linear;
+	border: 0;
+	box-shadow: 1px 1px 10px 1px rgb(34 34 34 / 20%);
+}
+
+.team-service-btn:hover {
+	background-color: rgba(16, 64, 153, 0.6);
+	transform: translateY(-3px);
+	background-position: 99% 0;
+}
+
+.team-member {
+	background-color: rgba(225, 232, 240, 1);
+}
+
+.team-img:hover .img-layer {
+	opacity: 1;
+}
+
+.team-img img {
+	transition: transform 650ms ease-in-out, filter 650ms ease-in-out;
+}
+
+.team-img:hover img {
+	transform: scale3d(1.1, 1.1, 1.1);
+	opacity: 1;
+	width: 100%;
+}
+
+.team-img {
+	overflow: hidden;
+}
+
+
+.team-btn {
+	padding: 1em 1.8em;
+	background-color: #fff;
+	color: #29a8df;
+	outline: none;
+	border: 0;
+	cursor: pointer;
+	box-shadow: 1px 1px 10px 1px rgb(34 34 34 / 20%);
+	transition: all 300ms ease;
+}
+
+.team-btn:hover {
+	box-shadow: 1px 1px 10px 1px rgb(34 34 34 / 50%);
+}
+
+.img-layer {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: rgba(41, 168, 222, 0.7);
+	pointer-events: none;
+	opacity: 0;
+	transition: all 300ms ease;
+}
+
+
+.doctor-social-icons {
+	font-size: 28px;
+}
+
+.doctor-social-icons span {
+	margin: 0 10px;
+}
+
+.doctor-social-icons .facebook .fa-facebook,
+.doctor-social-icons .twitter .fa-twitter,
+.doctor-social-icons .linkedin .fa-linkedin-in,
+.doctor-social-icons .pinterest .fa-pinterest-p {
+	transition: all 0.4s ease;
+	cursor: pointer;
+	color: #000000;
+}
+
+.doctor-social-icons .facebook:hover .fa-facebook {
+	color: #3b5998;
+}
+
+.doctor-social-icons .twitter:hover .fa-twitter {
+	color: #1da1f2;
+}
+
+.doctor-social-icons .linkedin:hover .fa-linkedin-in {
+	color: #0a66c2;
+
+}
+
+.doctor-social-icons .pinterest:hover .fa-pinterest-p {
+	color: #bd081c;
+}
+
+.progress-bar {
+	background-color: #29a8df;
+}
+
+.before-after {
+	background-color: rgba(225, 232, 240, 1);
+}
+
+.btn-appointment {
+	background-color: #29a8df;
+	color: #fff;
+	transition: all 0.4s linear;
+	border: 0;
+	box-shadow: 1px 1px 10px 1px rgb(34 34 34 / 20%);
+}
+
+.btn-appointment:hover {
+	background-color: #29a8df;
+	color: #fff;
+	transform: translateY(-3px);
+	background-position: 99% 0;
+}
+
+#call-to-action .container {
+	background-color: #104099;
+}
+
+.call {
+	font-size: 2.4rem;
+}
+
+.call-now {
+	color: #fff;
+	font-size: 1.5rem;
+	font-weight: 400;
+}
+
+.call-now-number {
+	color: #fff;
+	font-weight: bold;
+}
+
+.btn-call-now {
+	background-color: #29a8df;
+	color: #fff;
+	transition: all 0.4s linear;
+	border: 0;
+	box-shadow: 1px 1px 10px 1px rgb(34 34 34 / 20%);
+}
+
+.btn-call-now:hover {
+	background-color: rgba(8, 24, 53, 0.842);
+	transform: translateY(-3px);
+	background-position: 99% 0;
+}
+
+#home-services {
+	background-color: rgba(225, 232, 240, 1);
+}
+
+.after-title::after {
+	content: '';
+	position: absolute;
+	height: 5px;
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: 0;
+	background-color: rgba(8, 24, 53, 0.842);
+	width: 100px;
+}

@@ -1,0 +1,247 @@
+<div id="carouselExampleInterval" class="carousel slide carousel-fade" data-bs-touch="true" data-bs-ride="carousel">
+	<div class="carousel-inner">
+		<div *ngFor="let slider of _HomeService.homeData?.sliders" class="carousel-item active" data-bs-interval="4000">
+			<img [src]="slider?.image" class="d-block w-100 position-relative" [alt]="slider?.title + ' Image'">
+			<div class="carousel-caption d-block d-md-block shadow">
+				<h1>{{slider?.title}}</h1>
+				<div class="inner-text">
+					<div class="text-dark" [innerHtml]="slider?.description"></div>
+					<a [routerLink]="['/about' | localize]" i18n class="btn team-service-btn">{{'check_our_services' | translate }}</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+		<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		<span class="visually-hidden">Previous</span>
+	</button>
+	<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+		<span class="carousel-control-next-icon" aria-hidden="true"></span>
+		<span class="visually-hidden">Next</span>
+	</button>
+</div>
+<section id="home-about" class="">
+	<div class="container-fluid">
+		<div class="row justify-content-center">
+			<div class="col-md-4 col-sm-12 text-center">
+				<img class="img-fluid" [src]="_HomeService.homeData?.about_page?.image" [alt]="_HomeService.homeData?.about_page?.title+' Image'">
+			</div>
+			<div class="about-text col-md-4 pt-3">
+				<span>{{_HomeService.homeData?.about_page?.subtitle}}</span>
+				<h2>{{_HomeService.homeData?.about_page?.title}}</h2>
+				<div class="text-justify" [innerHtml]="_HomeService.homeData?.about_page?.description"></div>
+				<a [routerLink]="['/about' | localize]" i18n class="btn team-service-btn px-5">{{'read_more' | translate }}</a>
+			</div>
+		</div>
+	</div>
+</section>
+<section id="home-services" class="py-5">
+	<div class="container">
+		<h2 i18n class="text-center after-title position-relative py-4"> {{'our_services' | translate }}</h2>
+		<div class="row d-flex align-items-center justify-content-evenly pt-5">
+			<div *ngFor="let service of this._HomeService.servicesArray" class="card h-100 mb-3 p-2 col-md-6 col-sm-12 shadow">
+				<div class="row d-flex align-items-center justify-content-center g-0">
+					<div class="col-md-4">
+						<img [src]="service?.image" class="img-fluid rounded-start">
+					</div>
+					<div class="col-md-8">
+						<div class="card-body">
+							<h5 class="card-title">{{service?.title}}</h5>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="our-team py-5">
+	<div class="container">
+		<h2 i18n class="text-center pb-3 after-title position-relative">{{'our_team' | translate }}</h2>
+		<div class="row d-flex align-items-center justify-content-center">
+			<div *ngFor="let doctor of this._HomeService.teamArray" class="col-md-4 col-sm-12 my-3">
+				<div *ngIf="teamArray" class="team-member shadow">
+					<div class="team-img position-relative w-100">
+						<a >
+							<img style="cursor: pointer;" [routerLink]="['/doctor', doctor.id] | localize" class="img-fluid" [src]="doctor?.image" [alt]="doctor?.fname+' Image'">
+						</a>
+						<div class="img-layer"></div>
+					</div>
+					<div class="p-3 pb-5">
+						<span class="title">{{doctor?.subtitle}}</span>
+						<h3 class="dr-name"><strong>{{doctor?.fname}}</strong></h3>
+						<span [innerHTML]="doctor?.description" class="job-desc"></span>
+						<div class="d-flex align-items-center justify-content-between">
+							<a i18n class="text-decoration-none team-btn" [routerLink]="['/doctor', doctor.id] | localize">{{'read_more' | translate }}</a>
+							<div class="doctor-social-icons d-flex align-items-center justify-content-center">
+								<a [href]="doctor.facebook" class="mx-2 facebook">
+									<i class="fa-brands fa-facebook"></i>
+								</a>
+								<a [href]="doctor.twitter" class="mx-2 twitter">
+									<i class="fa-brands fa-twitter"></i>
+								</a>
+								<a [href]="doctor.linkedin" class="mx-2 linkedin">
+									<i class="fa-brands fa-linkedin-in"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="testimonials pb-3">
+	<div class="container">
+		<div class="row d-flex align-items-center justify-content-center ">
+			<div class="">
+				<h2 i18n class="text-capitalize after-title position-relative text-center pb-3">{{'clients_reviews' | translate }}</h2>
+			</div>
+			<div class="col-md-12 text-capitalize p-4">
+				<owl-carousel-o class="py-2 testimonials-carousel" [options]="customOptions">
+					<ng-template *ngFor="let item of _HomeService.homeData?.testimonials" carouselSlide>
+						<div class="p-3 client">
+							<div class="test-title-img rounded px-3 testimonials-caption">
+								<div class="test-title">
+									<h6 class="mb-0">{{item.title}}</h6>
+									<div class="test-p">
+										<span [innerHTML]="item.description" class=""></span>
+									</div>
+								</div>
+								<div class="test-img text-center">
+									<img class="rounded-circle mx-auto" [src]="item?.image" [alt]="item.title+' Image'">
+								</div>
+							</div>
+						</div>
+					</ng-template>
+				</owl-carousel-o>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="before-after py-5">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-sm-12">
+				<div class="col-md-12">
+					<h4 class="text-capitalize">{{_HomeService.homeData?.tooth_page?.title}}</h4>
+					<h2 class="text-capitalize">{{_HomeService.homeData?.tooth_page?.title}}</h2>
+					<span [innerHTML]="_HomeService.homeData?.tooth_page?.description"></span>
+				</div>
+				<div class="col-md-12 rangers my-3">
+					<div class="py-2">
+						<span i18n>{{'dental_satisfaction' | translate }}</span>
+						<div class="progress">
+							<div class="progress-bar" role="progressbar" style="width: 98%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+						</div>
+					</div>
+					<div class="py-2">
+						<span i18n>{{'success_rate' | translate }}</span>
+						<div class="progress">
+							<div class="progress-bar" role="progressbar" style="width: 95%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+						</div>
+					</div>
+					<div class="py-2">
+						<span i18n>{{'service_satisfaction' | translate }}</span>
+						<div class="progress">
+							<div class="progress-bar" role="progressbar" style="width: 92%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 col-sm-12 image-container">
+				<!-- <img-comparison-slider class="border-0">
+						<img slot="first" width="100%" src="../../assets/images/teeth-before.jpg" />
+						<img slot="second" width="100%" src="../../assets/images/teeth-after.jpg" />
+					</img-comparison-slider> -->
+				<img class="img-fluid" [src]="_HomeService.homeData?.tooth_page?.image2" alt=" Before and After Image">
+			</div>
+		</div>
+	</div>
+</section>
+<section class="book-appointment">
+	<div class="container-fluid">
+		<div class="row align-items-center justify-content-center">
+			<h2 i18n class="text-capitalize text-center pb-4 my-2 after-title position-relative">{{'book_appointment' | translate }}</h2>
+			<div class="mobile-responsive-book-appointment pt-5">
+				<div class="col-md-6 col-sm-12 pt-5">
+					<form [formGroup]="appointmentForm" (ngSubmit)="submitAppointment(appointmentForm)" action="" class="form-group p-0">
+						<div i18n *ngIf="error" class="alert alert-danger"> {{'something_went_wrong' | translate }} </div>
+						<div i18n *ngIf="success" class="alert alert-success"> {{'booking_done_successfully' | translate }} </div>
+						<label for="first_name"></label>
+						<input formControlName="first_name" name="first_name" placeholder="{{'first_name' | translate }}" class="form-control" type="text">
+						<div *ngIf="appointmentForm.get('first_name')?.errors && (appointmentForm.get('first_name')?.touched)" class="alert border border-danger">
+							<p i18n *ngIf="appointmentForm.get('first_name')?.errors?.['required']">{{'first_name_required' | translate }}</p>
+							<p i18n *ngIf="appointmentForm.get('first_name')?.errors?.['minlength']">{{'min_length' | translate }}</p>
+							<p i18n *ngIf="appointmentForm.get('first_name')?.errors?.['maxlength']">{{'max_length' | translate }}</p>
+						</div>
+						<label for="last_name"></label>
+						<input formControlName="last_name" name="last_name" placeholder="{{'last_name' | translate }}" class="form-control" type="text">
+						<div *ngIf="appointmentForm.get('last_name')?.errors && (appointmentForm.get('last_name')?.touched)" class="alert border border-danger">
+							<p i18n *ngIf="appointmentForm.get('last_name')?.errors?.['required']">{{'last_name_required' | translate }}</p>
+							<p i18n *ngIf="appointmentForm.get('last_name')?.errors?.['minlength']">{{'min_length' | translate }}</p>
+							<p i18n *ngIf="appointmentForm.get('last_name')?.errors?.['maxlength']">{{'max_length' | translate }}</p>
+						</div>
+						<label for="age"></label>
+						<input formControlName="age" name="age" placeholder="{{'age' | translate }}" class="form-control" type="number">
+						<div *ngIf="appointmentForm.get('age')?.errors && (appointmentForm.get('age')?.touched)" class="alert border border-danger">
+							<p i18n *ngIf="appointmentForm.get('age')?.errors?.['required']">{{'age_required' | translate }}</p>
+							<p i18n *ngIf="appointmentForm.get('age')?.errors?.['min']">{{'minimum_age' | translate }}</p>
+							<p i18n *ngIf="appointmentForm.get('age')?.errors?.['max']">{{'maximum_age' | translate }}</p>
+						</div>
+						<label for="phone"></label>
+						<input formControlName="phone" name="phone" placeholder="{{'phone' | translate }}" class="form-control" type="tel">
+						<div *ngIf="appointmentForm.get('phone')?.errors && (appointmentForm.get('phone')?.touched)" class="alert border border-danger">
+							<p i18n *ngIf="appointmentForm.get('phone')?.errors?.['required']">{{'phone_required' | translate }}</p>
+						</div>
+						<label for="email"></label>
+						<input formControlName="email" name="email" placeholder="{{'email' | translate }}" class="form-control" type="email">
+						<div *ngIf="appointmentForm.get('email')?.errors && (appointmentForm.get('email')?.touched)" class="alert border border-danger">
+							<p i18n *ngIf="appointmentForm.get('email')?.errors?.['email']">{{'email_valid' | translate }}</p>
+						</div>
+						<label for="service"></label>
+						<select formControlName="service" name="service" id="service" class="form-select">
+							<option i18n disabled selected [ngValue]="null">{{'select_service' | translate }}</option>
+							<option *ngFor="let service of _HomeService.homeData.services" [value]="service.title">{{service.title}}</option>
+						</select>
+						<div *ngIf="appointmentForm.get('service')?.errors && (appointmentForm.get('service')?.touched)" class="alert border border-danger">
+							<p i18n *ngIf="appointmentForm.get('service')?.errors?.['required']">{{'service_required' | translate }}</p>
+						</div>
+						<label for="doctor"></label>
+						<select formControlName="doctor" name="doctor" id="doctor" class="form-select">
+							<option i18n disabled selected [ngValue]="null">{{'select_doctor' | translate }}</option>
+							<option *ngFor="let doctor of _HomeService.homeData.our_team" [value]="doctor.fname">{{doctor.fname}}</option>
+						</select>
+						<div *ngIf="appointmentForm.get('doctor')?.errors && (appointmentForm.get('doctor')?.touched)" class="alert border border-danger">
+							<p i18n *ngIf="appointmentForm.get('doctor')?.errors?.['min']">{{'min_length' | translate }}</p>
+							<p i18n *ngIf="appointmentForm.get('doctor')?.errors?.['max']">{{'max_length' | translate }}</p>
+						</div>
+						<label for="date_time"></label>
+						<input formControlName="date_time" name="date_time" placeholder="{{'date' | translate }}" class="form-control" type="date">
+						<div *ngIf="appointmentForm.get('date_time')?.errors && (appointmentForm.get('date_time')?.touched)" class="alert border border-danger">
+							<p i18n *ngIf="appointmentForm.get('date_time')?.errors?.['required']">{{'date_required' | translate }}</p>
+						</div>
+						<button i18n type="submit" class="btn btn-appointment py-2 px-4 my-3 float-end">{{'book' | translate }}</button>
+					</form>
+				</div>
+				<div class="col-md-5 col-sm-12">
+					<img class="img-fluid" [src]="_HomeService.homeData.appointment_page?.image" alt="Appointment Image">
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section id="call-to-action" class="text-white my-5">
+	<div class="container p-5">
+		<div class="row">
+			<div class="call-to-action col-md-12">
+				<div class="col-md-8 call d-flex align-items-start flex-column  ">
+					<span i18n class="call-now py-3">{{'call_now' | translate }}</span>
+					<span dir="ltr" class="call-now-number">{{_HomeService.settingsArray.phone}}</span>
+				</div>
+				<div class="col-md-4 d-flex justify-content-end ">
+					<button i18n [routerLink]="['/contact' | localize]" class="btn btn-call-now rounded px-4 py-3 text-capitalize">{{'contact_us' | translate }}</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

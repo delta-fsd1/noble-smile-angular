@@ -1,0 +1,121 @@
+.breadcrumb-bg {
+	background-image: url(../../assets/images/about-us-breadcrumb.jpg);
+	padding: 15rem 7rem;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	height: 400px;
+}
+
+.breadcrumb-bg::before {
+	background: rgba(34, 37, 51, 0.1) none repeat scroll 0 0;
+	content: "";
+	padding: 15rem 7rem;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	width: 100%;
+}
+
+.breadcrumb-item {
+	color: #4fffd9;
+	font-size: large;
+}
+
+.breadcrumb-item a {
+	color: white;
+	transition: all 0.2s linear;
+}
+
+.breadcrumb-item:hover a {
+	color: #4fffd9;
+}
+
+.breadcrumb-headline {
+	color: #29a8df;
+	font-weight: bolder;
+	position: relative;
+}
+
+.breadcrumb-headline::after {
+	content: '';
+	position: absolute;
+	right: 0;
+	bottom: 5px;
+	left: 0;
+	width: 100%;
+	background-color: #29a8df;
+	height: 5px;
+}
+
+@media (min-width: 991px) {
+	.card {
+		max-width: 540px;
+	}
+}
+
+.vision-container {
+	background-color: rgb(240, 244, 247);
+}
+
+.test-title-img {
+	background-color: rgb(240, 244, 247);
+}
+
+.test-title-img {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.test-title {
+	width: 75%;
+}
+
+.test-img {
+	width: 50%;
+}
+
+.test-title h6 {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	color: #29a8df;
+	font-weight: 700;
+	line-height: 1.5em;
+	font-size: 1.5625rem;
+}
+@media (min-width: 991px) {
+
+.test-title-img {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.test-title {
+	width: 75%;
+}
+
+.test-img {
+	width: 50%;
+}
+
+.test-title h6 {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	color: #29a8df;
+	font-weight: 700;
+	line-height: 1.5em;
+	font-size: 1.5625rem;
+}
+.client img {
+	width: 30%;
+}
+}
