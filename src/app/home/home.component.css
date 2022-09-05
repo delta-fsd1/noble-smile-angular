@@ -283,7 +283,7 @@
 
 .team-service-btn {
 	background-color: #29a8df;
-	color: #000;
+	color: #fff;
 	transition: all 0.4s linear;
 	border: 0;
 	box-shadow: 1px 1px 10px 1px rgb(34 34 34 / 20%);
@@ -390,7 +390,7 @@
 
 .btn-appointment {
 	background-color: #29a8df;
-	color: #0e0e0e;
+	color: #fff;
 	transition: all 0.4s linear;
 	border: 0;
 	box-shadow: 1px 1px 10px 1px rgb(34 34 34 / 20%);

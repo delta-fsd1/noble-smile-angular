@@ -13,34 +13,23 @@ import { HomeService } from '../home.service';
 })
 export class ContactComponent implements OnInit {
 
-  lang: string = 'en';
-  address: any;
-  email: any;
-  phone: any;
-
   constructor(private _ContactService: ContactService, public _HomeService: HomeService, public translate: TranslateService) {
     this._HomeService.getHomeData(this.translate.getDefaultLang()).subscribe({
       next: (response) => {
         this._HomeService.homeData = response.data;
-        this._HomeService.teamArray = response.data.our_team.slice(0, 3)
         this._HomeService.servicesArray = response.data.services.slice(0, 5)
-        this.address = response.data.address;
-
       }
     });
 
     this._HomeService.getSettings(this.translate.getDefaultLang()).subscribe({
       next: (response) => {
         this._HomeService.settingsArray = response.data;
-        this.address = response.data.address;
-        this.email = response.data.email;
-        this.phone = response.data.phone;
       }
     });
   }
   error: boolean = false;
   success: boolean = false;
-  formError: BehaviorSubject<boolean> = new BehaviorSubject(false);
+  formError: boolean = false;
 
 
   contactForm: FormGroup = new FormGroup({
@@ -57,7 +46,7 @@ export class ContactComponent implements OnInit {
           this.success = true;
           this.error = false;
           contactForm.reset();
-          this.formError.next(false);
+          this.formError = false;
         },
         error: () => {
           this.error = true;
@@ -65,7 +54,9 @@ export class ContactComponent implements OnInit {
         }
       })
     } else {
-      this.formError.next(true);
+      this.formError = true;
+      this.error = false;
+      this.success = false;
     }
   }
 

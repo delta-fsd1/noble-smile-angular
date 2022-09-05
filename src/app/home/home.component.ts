@@ -70,6 +70,8 @@ export class HomeComponent implements OnInit {
       })
     } else {
       this.formError = true;
+      this.error = false;
+      this.success = false;
     }
   }
 

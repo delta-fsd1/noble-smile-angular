@@ -166,7 +166,7 @@
 			<div class="mobile-responsive-book-appointment pt-5">
 				<div class="col-md-6 col-sm-12 pt-5">
 					<form [formGroup]="appointmentForm" (ngSubmit)="submitAppointment(appointmentForm)" action="" class="form-group p-0">
-						<div i18n *ngIf="error || formError" class="alert alert-danger"> {{'something_went_wrong' | translate }} </div>
+						<div i18n *ngIf="error" class="alert alert-danger"> {{'something_went_wrong' | translate }} </div>
 						<div i18n *ngIf="success" class="alert alert-success"> {{'booking_done_successfully' | translate }} </div>
 						<!-- <label for="first_name"></label> -->
 						<input formControlName="first_name" name="first_name" placeholder="{{'first_name' | translate }}" class="form-control mt-4" type="text">

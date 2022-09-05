@@ -16,15 +16,15 @@
 			<ul class="list-unstyled contact-list ms-auto ps-2">
 				<li class="contact  py-3">
 					<h4 i18n class="fw-bold">{{'address' | translate }}</h4>
-					<a class="text-decoration-none text-center text-dark"> {{address}}</a>
+					<a class="text-decoration-none text-center text-dark"> {{_HomeService.settingsArray?.address}}</a>
 				</li>
 				<li class="contact  py-3">
 					<h4 i18n class="fw-bold">{{'email' | translate }}</h4>
-					<a [href]="'mailto:'+ email" class="text-decoration-none text-center text-dark"> {{email}}</a>
+					<a [href]="'mailto:'+ _HomeService.settingsArray?.email" class="text-decoration-none text-center text-dark"> {{_HomeService.settingsArray?.email}}</a>
 				</li>
 				<li class="contact  py-3">
 					<h4 i18n class="fw-bold">{{'phone' | translate }}</h4>
-					<a [href]="'tel:'+ phone" class="text-decoration-none text-center text-dark"> {{phone}}</a>
+					<a dir="ltr" [href]="'tel:'+ _HomeService.settingsArray?.phone" class="text-decoration-none text-center text-dark"> {{_HomeService.settingsArray?.phone}}</a>
 				</li>
 			</ul>
 		</div>
