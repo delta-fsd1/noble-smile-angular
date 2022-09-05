@@ -56,6 +56,15 @@
 }
 
 @media (max-width: 991px) {
+	.test-title {
+		width: 100%;
+		text-align: center;
+	}
+
+	.test-img {
+		width: 100%;
+	}
+
 	.test-title-img {
 		display: flex;
 		align-items: center;
@@ -63,13 +72,13 @@
 		flex-direction: column-reverse;
 	}
 
-	.test-img {
-		width: 100%;
-	}
-
-	.test-title {
-		width: 100%;
-		text-align: center;
+	.test-title h6 {
+		padding-top: 5px;
+		padding-bottom: 5px;
+		color: #29a8df;
+		font-weight: 700;
+		line-height: 1.5em;
+		font-size: 1.2rem;
 	}
 
 	.client img {
@@ -85,40 +94,16 @@
 	background-color: rgb(240, 244, 247);
 }
 
-.test-title-img {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-}
-
-
-
-.test-title h6 {
-	padding-top: 5px;
-	padding-bottom: 5px;
-	color: #29a8df;
-	font-weight: 700;
-	line-height: 1.5em;
-	font-size: 1.5625rem;
-}
-
 @media (min-width: 991px) {
-	.test-img {
-		width: 50%;
-	}
-
-	.test-title {
-		width: 75%;
-	}
-
 	.card {
 		max-width: 540px;
 	}
-	
+
 	.test-title-img {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		height: 178px;
 	}
 
 	.test-title {

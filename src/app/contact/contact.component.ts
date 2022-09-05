@@ -35,7 +35,7 @@ export class ContactComponent implements OnInit {
   contactForm: FormGroup = new FormGroup({
     name: new FormControl(null, [Validators.required, Validators.minLength(3), Validators.maxLength(12)]),
     email: new FormControl(null, Validators.email),
-    phone: new FormControl(null, [Validators.required, Validators.maxLength(12)]),
+    phone: new FormControl(null, [Validators.required, Validators.maxLength(40)]),
     message: new FormControl(null, [Validators.required])
   })
 
