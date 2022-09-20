@@ -3,6 +3,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 import { TranslateService } from '@ngx-translate/core';
 import { LocalizeRouterService } from '@gilsdav/ngx-translate-router';
 import * as AOS from 'aos';
+import { BehaviorSubject } from 'rxjs';
 
 
 
@@ -15,6 +16,7 @@ import * as AOS from 'aos';
 export class AppComponent {
   title = 'noble-smile';
 
+  isLoaded: BehaviorSubject<boolean> = new BehaviorSubject(true);
 
   constructor(private spinner: NgxSpinnerService, public translate: TranslateService, private localizeService: LocalizeRouterService,) {
     translate.addLangs(['en', 'ar']);
@@ -29,6 +31,10 @@ export class AppComponent {
     }
 
 
+  }
+
+  public loadedFunction() {
+    this.isLoaded.next(false);
   }
 
 

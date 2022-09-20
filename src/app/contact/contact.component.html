@@ -37,9 +37,9 @@
 					<label for="name"></label>
 					<input formControlName="name" placeholder="{{'name' | translate }}" class="form-control " type="text">
 					<div *ngIf="(contactForm.get('name')?.errors && contactForm.get('name')?.touched) || formError" class="text-danger my-2">
-						<p i18n *ngIf="contactForm.get('name')?.errors?.['required']">{{'name_required' | translate }}</p>
-						<p i18n *ngIf="contactForm.get('name')?.errors?.['minlength']">{{'min_length' | translate }}</p>
-						<p i18n *ngIf="contactForm.get('name')?.errors?.['maxlength']">{{'max_length' | translate }}</p>
+						<p  *ngIf="contactForm.get('name')?.errors?.['required']">{{'name_required' | translate }}</p>
+						<p  *ngIf="contactForm.get('name')?.errors?.['minlength']">{{'min_length' | translate }}</p>
+						<p  *ngIf="contactForm.get('name')?.errors?.['maxlength']">{{'max_length' | translate }}</p>
 					</div>
 					<label for="name"></label>
 					<input formControlName="email" placeholder="{{'email' | translate }} {{'optional' | translate }}" class="form-control " type="email">

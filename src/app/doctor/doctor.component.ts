@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
+import { AppComponent } from '../app.component';
 import { HomeService } from '../home.service';
 
 
@@ -13,7 +14,7 @@ export class DoctorComponent implements OnInit {
 
   lang: string = 'en';
 
-  constructor(public _HomeService: HomeService, private _ActivatedRoute: ActivatedRoute, public translate: TranslateService) {
+  constructor(public _HomeService: HomeService, private _ActivatedRoute: ActivatedRoute, public translate: TranslateService, public loader: AppComponent) {
 
     this._HomeService.doctorId = this._ActivatedRoute.snapshot.params['id'];
     this._HomeService.getHomeData(this.translate.getDefaultLang()).subscribe({
@@ -24,6 +25,7 @@ export class DoctorComponent implements OnInit {
             this._HomeService.singleDoctor = this._HomeService.doctorsContainer[i];
           }
         }
+        this.loader.loadedFunction()
       }
     })
   }

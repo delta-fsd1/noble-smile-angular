@@ -2,12 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { AppComponent } from '../app.component';
 import { AppointmentService } from '../appointment.service';
 import { HomeService } from '../home.service';
 import { SettingsService } from '../settings.service';
-
-
-
 
 
 @Component({
@@ -27,20 +25,25 @@ export class HomeComponent implements OnInit {
   servicesArray: any = [];
   formError: boolean = false;
 
-  constructor(private _AppointmentService: AppointmentService, public _HomeService: HomeService, private _SettingsService: SettingsService, public translate: TranslateService) {
+
+
+  constructor(private _AppointmentService: AppointmentService, public _HomeService: HomeService, private _SettingsService: SettingsService, public translate: TranslateService, public loader: AppComponent) {
     this._HomeService.getHomeData(this.translate.getDefaultLang()).subscribe({
       next: (response) => {
         this._HomeService.homeData = response.data;
         this._HomeService.teamArray = response.data.our_team.slice(0, 3)
         this._HomeService.servicesArray = response.data.services.slice(0, 4)
+        this.loader.loadedFunction()
       }
     });
 
     this._HomeService.getSettings(this.translate.getDefaultLang()).subscribe({
       next: (response) => {
         this._HomeService.settingsArray = response.data;
+        this.loader.loadedFunction()
       }
     });
+
   }
 
   appointmentForm: FormGroup = new FormGroup({

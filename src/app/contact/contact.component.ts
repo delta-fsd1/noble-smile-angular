@@ -2,6 +2,7 @@ import { Component, OnInit, AfterViewChecked } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 import { BehaviorSubject } from 'rxjs';
+import { AppComponent } from '../app.component';
 import { ContactService } from '../contact.service';
 import { HomeService } from '../home.service';
 
@@ -13,17 +14,19 @@ import { HomeService } from '../home.service';
 })
 export class ContactComponent implements OnInit {
 
-  constructor(private _ContactService: ContactService, public _HomeService: HomeService, public translate: TranslateService) {
+  constructor(private _ContactService: ContactService, public _HomeService: HomeService, public translate: TranslateService, public loader: AppComponent) {
     this._HomeService.getHomeData(this.translate.getDefaultLang()).subscribe({
       next: (response) => {
         this._HomeService.homeData = response.data;
         this._HomeService.servicesArray = response.data.services.slice(0, 5)
+        this.loader.loadedFunction()
       }
     });
 
     this._HomeService.getSettings(this.translate.getDefaultLang()).subscribe({
       next: (response) => {
         this._HomeService.settingsArray = response.data;
+        this.loader.loadedFunction()
       }
     });
   }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { AppComponent } from '../app.component';
 import { HomeService } from '../home.service';
-
 
 
 @Component({
@@ -18,18 +18,20 @@ export class FooterComponent implements OnInit {
   servicesArray: any = [];
 
 
-  constructor(public _HomeService: HomeService, public translate: TranslateService) {
+  constructor(public _HomeService: HomeService, public translate: TranslateService, public loader: AppComponent) {
     this._HomeService.getHomeData(this.translate.getDefaultLang()).subscribe({
       next: (response) => {
         this._HomeService.homeData = response.data;
         this._HomeService.teamArray = response.data.our_team.slice(0, 3)
         this._HomeService.footerServices = response.data.services.slice(0, 5);
+        this.loader.loadedFunction()
       }
     });
 
     this._HomeService.getSettings(this.translate.getDefaultLang()).subscribe({
       next: (response) => {
         this._HomeService.settingsArray = response.data;
+        this.loader.loadedFunction()
       }
     });
 
