@@ -13,6 +13,9 @@
 <section class="our-team py-5">
 	<div class="container py-5">
 		<div class="row d-flex align-items-center justify-content-center">
+			<div class="d-flex justify-content-center align-items-center" *ngIf="_HomeService.teamContainer.length <= 0">
+				<i class="fas fa-cog fa-spin" style="font-size:100px;color:#29a8df"></i>
+			</div>
 			<div *ngFor="let doctor of _HomeService.teamContainer" class="col-md-4 col-sm-12 my-3">
 				<div class="team-member shadow">
 					<div class="team-img position-relative w-100">

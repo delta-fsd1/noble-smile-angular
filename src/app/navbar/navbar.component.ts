@@ -4,6 +4,7 @@ import { HomeService } from '../home.service';
 import { SettingsService } from '../settings.service';
 import { TranslateService } from '@ngx-translate/core';
 import { LocalizeRouterService } from '@gilsdav/ngx-translate-router';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 
 
@@ -26,13 +27,14 @@ export class NavbarComponent implements OnInit {
   constructor(private _Router: Router,
     private settings: SettingsService, @Inject(LOCALE_ID) public activeLocale: string,
     public _HomeService: HomeService, public translate: TranslateService, private localize : LocalizeRouterService,
-    private _ActivatedRoute: ActivatedRoute) {
+    private _ActivatedRoute: ActivatedRoute, private spinner: NgxSpinnerService) {
 
     }
 
 
   switchLang(lang: string) {
     // this.localize.translateRoute(lang)
+    this.spinner.show();
     this.translate.setDefaultLang(lang);
     this.translate.use(lang);
     this.localize.changeLanguage(lang);
@@ -60,6 +62,7 @@ export class NavbarComponent implements OnInit {
             this._HomeService.singleDoctor = this._HomeService.doctorsContainer[i];
           }
         }
+        this.spinner.hide();
       }
     });
 

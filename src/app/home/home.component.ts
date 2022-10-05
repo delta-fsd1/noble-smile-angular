@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormControl, NgModel, Validators } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { AppointmentService } from '../appointment.service';
 import { HomeService } from '../home.service';
 import { SettingsService } from '../settings.service';
@@ -28,12 +29,14 @@ export class HomeComponent implements OnInit {
   settingsArray: any = [];
   servicesArray: any = [];
 
-  constructor(private _AppointmentService: AppointmentService, public _HomeService: HomeService, private _SettingsService: SettingsService, public translate: TranslateService) {
+  constructor(private _AppointmentService: AppointmentService, public _HomeService: HomeService, 
+    private _SettingsService: SettingsService, public translate: TranslateService, private spinner: NgxSpinnerService, ) {
     this._HomeService.getHomeData(this.translate.getDefaultLang()).subscribe({
       next: (response) => {
         this._HomeService.homeData = response.data;
         this._HomeService.teamArray = response.data.our_team.slice(0, 3)
         this._HomeService.servicesArray = response.data.services.slice(0, 4)
+        this.spinner.hide()
       }
     });
 
@@ -102,6 +105,7 @@ export class HomeComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.spinner.show();
   }
 
 }

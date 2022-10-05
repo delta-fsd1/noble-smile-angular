@@ -11,8 +11,11 @@
 </div>
 <div class="container py-5">
 	<div class="row shadow p-5 rounded">
+		<div class="d-flex justify-content-center align-items-center" *ngIf="!_HomeService.singleDoctor">
+			<i class="fas fa-cog fa-spin" style="font-size:100px;color:#29a8df"></i>
+		</div>
 		<div class="col-md-6 col-sm-12">
-			<img class="img-fluid" [src]="_HomeService.singleDoctor?.image" [alt]="_HomeService.singleDoctor?.fname+' Image'">
+			<img class="img-fluid" [src]="_HomeService.singleDoctor?.image" [alt]="_HomeService.singleDoctor.fname?_HomeService.singleDoctor.fname+' Image':''">
 		</div>
 		<div class="col-md-6 col-sm-12 d-flex align-items-start flex-column">
 			<div class="doctor-top mb-2">

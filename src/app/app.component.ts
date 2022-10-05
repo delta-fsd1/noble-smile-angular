@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { NgxSpinnerService } from 'ngx-spinner';
 import { TranslateService } from '@ngx-translate/core';
 import { LocalizeRouterService } from '@gilsdav/ngx-translate-router';
 
@@ -15,7 +14,7 @@ export class AppComponent {
   title = 'noble-smile';
 
 
-  constructor(private spinner: NgxSpinnerService, public translate: TranslateService, private localizeService: LocalizeRouterService, ) {
+  constructor(public translate: TranslateService, private localizeService: LocalizeRouterService, ) {
     translate.addLangs(['en', 'ar']);
     // translate.setDefaultLang('en');
     
@@ -35,18 +34,14 @@ export class AppComponent {
 
 
   ngOnInit() {
-    this.spinner.show();
-    setTimeout(() => {
-      this.spinner.hide();
-    }, 2000);
   }
 
-  showSpinner() {
-    this.spinner.show();
-    setTimeout(() => {
-      this.spinner.hide();
-    }, 3000);
-  }
+  // showSpinner() {
+  //   this.spinner.show();
+  //   setTimeout(() => {
+  //     this.spinner.hide();
+  //   }, 3000);
+  // }
 
 
 }
