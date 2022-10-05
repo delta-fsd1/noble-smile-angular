@@ -3,7 +3,6 @@ import { TranslateService } from '@ngx-translate/core';
 import { HomeService } from '../home.service';
 
 
-
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
@@ -11,19 +10,19 @@ import { HomeService } from '../home.service';
 })
 export class FooterComponent implements OnInit {
   lang: string = 'en';
-  settings:any;
-  settingsObject:any = {} ;
+  settings: any;
+  settingsObject: any = {};
 
-  services:any;
-  servicesArray:any = [];
+  services: any;
+  servicesArray: any = [];
 
 
-  constructor(public _HomeService:HomeService, public translate: TranslateService) {
+  constructor(public _HomeService: HomeService, public translate: TranslateService) {
     this._HomeService.getHomeData(this.translate.getDefaultLang()).subscribe({
       next: (response) => {
         this._HomeService.homeData = response.data;
         this._HomeService.teamArray = response.data.our_team.slice(0, 3)
-        this._HomeService.footerServices = response.data.services.slice(0,5);
+        this._HomeService.footerServices = response.data.services.slice(0, 5);
       }
     });
 
@@ -35,8 +34,8 @@ export class FooterComponent implements OnInit {
 
   }
 
-  
-  
+
+
 
   ngOnInit(): void {
   }

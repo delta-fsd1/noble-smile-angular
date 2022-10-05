@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { LocalizeRouterService } from '@gilsdav/ngx-translate-router';
+import * as AOS from 'aos';
+import { BehaviorSubject } from 'rxjs';
 
 
 
@@ -13,27 +15,30 @@ import { LocalizeRouterService } from '@gilsdav/ngx-translate-router';
 export class AppComponent {
   title = 'noble-smile';
 
+  isLoaded: BehaviorSubject<boolean> = new BehaviorSubject(true);
 
   constructor(public translate: TranslateService, private localizeService: LocalizeRouterService, ) {
     translate.addLangs(['en', 'ar']);
-    // translate.setDefaultLang('en');
-    
-    
-      document.getElementsByTagName("html")[0].setAttribute("lang", this.translate.getDefaultLang());
+
+
+    document.getElementsByTagName("html")[0].setAttribute("lang", this.translate.getDefaultLang());
     if (this.translate.getDefaultLang() === 'ar') {
       document.getElementsByTagName("html")[0].setAttribute("dir", "rtl");
-      // this.langKey = localStorage.setItem("langKey", lang);
     }
     else {
       document.getElementsByTagName("html")[0].setAttribute("dir", "ltr");
-      // this.langKey = localStorage.setItem("langKey", lang);
     }
 
 
   }
 
+  public loadedFunction() {
+    this.isLoaded.next(false);
+  }
+
 
   ngOnInit() {
+    AOS.init();
   }
 
   // showSpinner() {

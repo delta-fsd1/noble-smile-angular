@@ -8,9 +8,9 @@ import { Observable } from 'rxjs';
 })
 export class ContactService {
 
-  constructor(private _HttpClient:HttpClient) {}
+  constructor(private _HttpClient: HttpClient) { }
 
-  sendMessage(formdata:any):Observable<any>{
+  sendMessage(formdata: any): Observable<any> {
     return this._HttpClient.post('https://demoyoursite.net/boula/basma/public/api/contact', formdata);
   }
 

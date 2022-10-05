@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { HomeService } from '../home.service';
-
 import { TranslateService } from '@ngx-translate/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 
@@ -13,18 +12,18 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 })
 export class AboutComponent implements OnInit {
   // lang: string = TranslateService.getDefaultLang();
-  about:any;
-  servicesArray:any = [];
+  about: any;
+  servicesArray: any = [];
 
-  constructor(public _HomeService:HomeService, public translate: TranslateService) {
-    
+  constructor(public _HomeService: HomeService, public translate: TranslateService) {
+
     this._HomeService.getHomeData(this.translate.getDefaultLang()).subscribe({
       next: (response) => {
         // this._HomeService.homeData = response.data;
         this._HomeService.aboutArray = response.data.about_page;
         // this._HomeService.teamArray = response.data.our_team.slice(0, 3);
         // this._HomeService.servicesContainer = response.data.services;
-        this._HomeService.footerServices = response.data.services.slice(0,5);
+        this._HomeService.footerServices = response.data.services.slice(0, 5);
       }
     });
 

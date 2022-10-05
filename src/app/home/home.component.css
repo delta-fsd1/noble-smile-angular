@@ -61,10 +61,12 @@
 		margin-right: 5px;
 		margin-left: 5px;
 	}
+
 	#home-about {
 		padding-top: 4rem;
 		padding-bottom: 4rem;
 	}
+
 	.reviews-btn {
 		background-color: #fff;
 		color: #181818;
@@ -157,6 +159,7 @@
 	.carousel-caption {
 		bottom: 0;
 	}
+
 	.carousel-caption {
 		padding: 1rem;
 		margin-left: 0;
@@ -196,7 +199,7 @@
 		margin: 3rem 0 0 0;
 		padding-bottom: 3rem;
 	}
-	
+
 
 	.about-text span,
 	.about-text h2,
@@ -217,10 +220,7 @@
 
 	.test-title {
 		width: 100%;
-	}
-
-	.test-title {
-		width: 100%;
+		text-align: center;
 	}
 
 	.test-img {
@@ -232,7 +232,6 @@
 		align-items: center;
 		justify-content: center;
 		flex-direction: column-reverse;
-		height: 178px;
 	}
 
 	.test-title h6 {
@@ -275,6 +274,7 @@
 		padding-top: 1rem;
 		padding-bottom: 2.5rem;
 	}
+
 	.client img {
 		width: 30%;
 	}
@@ -321,7 +321,7 @@
 .team-btn {
 	padding: 1em 1.8em;
 	background-color: #fff;
-	color: #29a8df;
+	color: #175f7e;
 	outline: none;
 	border: 0;
 	cursor: pointer;

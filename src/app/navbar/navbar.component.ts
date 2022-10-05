@@ -18,7 +18,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 export class NavbarComponent implements OnInit {
 
   settingsArray: any = [];
-  langKey:any;
+  langKey: any;
 
 
   homeContainer: any;
@@ -29,7 +29,7 @@ export class NavbarComponent implements OnInit {
     public _HomeService: HomeService, public translate: TranslateService, private localize : LocalizeRouterService,
     private _ActivatedRoute: ActivatedRoute, private spinner: NgxSpinnerService) {
 
-    }
+  }
 
 
   switchLang(lang: string) {
@@ -57,7 +57,7 @@ export class NavbarComponent implements OnInit {
         this._HomeService.footerServices = response.data.services.slice(0, 5);
         this._HomeService.teamContainer = response.data.our_team;
         this._HomeService.doctorsContainer = response.data.our_team;
-        for (let i = 0; i < this._HomeService.doctorsContainer.length ; i++) {
+        for (let i = 0; i < this._HomeService.doctorsContainer.length; i++) {
           if (this._HomeService.doctorsContainer[i].id == this._HomeService.doctorId) {
             this._HomeService.singleDoctor = this._HomeService.doctorsContainer[i];
           }

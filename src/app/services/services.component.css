@@ -78,7 +78,7 @@
 		box-shadow: 1px 1px 10px 1px rgb(34 34 34 / 20%);
 	}
 
-	.services-container .service-icon ,
+	.services-container .service-icon,
 	.services-container .service-text {
 		padding-bottom: 10px;
 	}
@@ -86,6 +86,6 @@
 
 .service-text .card-title {
 	border-bottom: 2px solid #29a8df;
-    padding-bottom: 0.4rem;
-    width: 60%;
+	padding-bottom: 0.4rem;
+	width: 60%;
 }

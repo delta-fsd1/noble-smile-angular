@@ -8,9 +8,9 @@ import { Observable } from 'rxjs';
 })
 export class AppointmentService {
 
-  constructor(private _HttpClient:HttpClient) {}
+  constructor(private _HttpClient: HttpClient) { }
 
-  getAppointment(formdata:any):Observable<any>{
+  getAppointment(formdata: any): Observable<any> {
     return this._HttpClient.post('https://demoyoursite.net/boula/basma/public/api/appointment', formdata);
   }
 

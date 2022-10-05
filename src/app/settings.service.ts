@@ -8,8 +8,8 @@ Observable
 })
 export class SettingsService {
 
-  constructor(private _HttpClient:HttpClient) {}
+  constructor(private _HttpClient: HttpClient) { }
 
-  
+
 
 }

@@ -4,7 +4,6 @@ import { TranslateService } from '@ngx-translate/core';
 import { HomeService } from '../home.service';
 
 
-
 @Component({
   selector: 'app-doctor',
   templateUrl: './doctor.component.html',

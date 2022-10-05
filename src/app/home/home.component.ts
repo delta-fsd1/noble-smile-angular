@@ -1,16 +1,11 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { FormGroup, FormControl, NgModel, Validators } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { AppointmentService } from '../appointment.service';
 import { HomeService } from '../home.service';
 import { SettingsService } from '../settings.service';
-
-
-
-
-
 
 
 @Component({
@@ -28,6 +23,8 @@ export class HomeComponent implements OnInit {
   settings: any;
   settingsArray: any = [];
   servicesArray: any = [];
+  formError: boolean = false;
+
 
   constructor(private _AppointmentService: AppointmentService, public _HomeService: HomeService, 
     private _SettingsService: SettingsService, public translate: TranslateService, private spinner: NgxSpinnerService, ) {
@@ -45,6 +42,7 @@ export class HomeComponent implements OnInit {
         this._HomeService.settingsArray = response.data;
       }
     });
+
   }
 
   appointmentForm: FormGroup = new FormGroup({
@@ -59,16 +57,24 @@ export class HomeComponent implements OnInit {
   });
 
   submitAppointment(appointmentForm: FormGroup) {
-    this._AppointmentService.getAppointment(appointmentForm.value).subscribe({
-      next: () => {
-        this.success = true;
-        this.error = false;
-      },
-      error: () => {
-        this.error = true;
-        this.success = false;
-      }
-    })
+    if (appointmentForm.valid) {
+      this._AppointmentService.getAppointment(appointmentForm.value).subscribe({
+        next: () => {
+          this.success = true;
+          this.error = false;
+          appointmentForm.reset();
+          this.formError = false;
+        },
+        error: () => {
+          this.error = true;
+          this.success = false;
+        }
+      })
+    } else {
+      this.formError = true;
+      this.error = false;
+      this.success = false;
+    }
   }
 
 
@@ -98,11 +104,6 @@ export class HomeComponent implements OnInit {
     },
     nav: false
   }
-
-
-
-
-
 
   ngOnInit(): void {
     this.spinner.show();
