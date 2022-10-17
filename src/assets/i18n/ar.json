@@ -18,6 +18,7 @@
     "leave_your_message"        : "اترك رسالتك هنا",
     "send"                      : "أرسل",
     
+    "know_more"                 : "اعرف المزيد",
     
     "our_services"              : "خدماتنا",
     "check_our_services"        : "اطلع على خدماتنا",
@@ -53,7 +54,9 @@
     "call_now"                  : "اتصل الأن",
     "contact_us_msg"            : "اتصل بنا",
     "our_vision"                : "رؤيتنا",
+    "our_mission"                : "مهمتنا",
     "vision_description"         : "لتوفير رعاية أسنان قائمة على الأدلة الرقمية",
+    "mission_description"         : "لتوفير رعاية أسنان قائمة على الأدلة الرقمية",
     "" : ""
     
 }

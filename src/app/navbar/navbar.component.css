@@ -1,15 +1,16 @@
 .nav-link {
-	color: white !important;
+	color: rgb(41,168,223) !important;
 }
 
 nav a {
-	font-weight: bolder;
+	font-weight: bold;
 	font-size: large;
 }
 
 .test {
-	color: #4fffd9 !important;
-	font-weight: 900 !important;
+	color: rgb(107, 107, 107) !important;
+	font-weight: bolder !important;
+
 }
 
 .navbar-brand {

@@ -26,14 +26,13 @@ export class NavbarComponent implements OnInit {
 
   constructor(private _Router: Router,
     private settings: SettingsService, @Inject(LOCALE_ID) public activeLocale: string,
-    public _HomeService: HomeService, public translate: TranslateService, private localize : LocalizeRouterService,
+    public _HomeService: HomeService, public translate: TranslateService, private localize: LocalizeRouterService,
     private _ActivatedRoute: ActivatedRoute, private spinner: NgxSpinnerService) {
 
   }
 
 
   switchLang(lang: string) {
-    // this.localize.translateRoute(lang)
     this.spinner.show();
     this.translate.setDefaultLang(lang);
     this.translate.use(lang);
@@ -41,11 +40,9 @@ export class NavbarComponent implements OnInit {
     document.getElementsByTagName("html")[0].setAttribute("lang", lang);
     if (lang === 'ar') {
       document.getElementsByTagName("html")[0].setAttribute("dir", "rtl");
-      // this.langKey = localStorage.setItem("langKey", lang);
     }
     else {
       document.getElementsByTagName("html")[0].setAttribute("dir", "ltr");
-      // this.langKey = localStorage.setItem("langKey", lang);
     }
     this._HomeService.getHomeData(lang).subscribe({
       next: (response) => {
@@ -65,6 +62,14 @@ export class NavbarComponent implements OnInit {
         this.spinner.hide();
       }
     });
+
+    this._HomeService.getAboutData(lang).subscribe({
+      next: (response) => {
+        this._HomeService.aboutContainer = response.data.about;
+        this._HomeService.missionArray = response.data.mission;
+        this._HomeService.visionArray = response.data.vision;
+      }
+    })
 
     this._HomeService.getSettings(lang).subscribe({
       next: (response) => {

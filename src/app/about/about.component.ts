@@ -11,7 +11,6 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent implements OnInit {
-  // lang: string = TranslateService.getDefaultLang();
   about: any;
   servicesArray: any = [];
 
@@ -19,11 +18,16 @@ export class AboutComponent implements OnInit {
 
     this._HomeService.getHomeData(this.translate.getDefaultLang()).subscribe({
       next: (response) => {
-        // this._HomeService.homeData = response.data;
-        this._HomeService.aboutArray = response.data.about_page;
-        // this._HomeService.teamArray = response.data.our_team.slice(0, 3);
-        // this._HomeService.servicesContainer = response.data.services;
         this._HomeService.footerServices = response.data.services.slice(0, 5);
+        this._HomeService.homeData = response.data.testimonials;
+      }
+    });
+
+    this._HomeService.getAboutData(this.translate.getDefaultLang()).subscribe({
+      next: (response) => {
+        this._HomeService.aboutContainer = response.data.about;
+        this._HomeService.missionArray = response.data.mission;
+        this._HomeService.visionArray = response.data.vision;
       }
     });
 

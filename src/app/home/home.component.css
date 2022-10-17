@@ -7,6 +7,17 @@
 	background-color: rgb(240, 244, 247);
 }
 
+.svg-logo {
+	height: 150px;
+	width: 200px;
+	filter: grayscale(1);
+	transition: all 0.2s linear;
+}
+
+.svg-logo:hover {
+	filter: grayscale(0);
+}
+
 
 @media (min-width: 991px) {
 	.carousel-caption {

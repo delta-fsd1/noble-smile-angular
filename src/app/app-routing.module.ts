@@ -6,6 +6,7 @@ import { ServicesComponent } from './services/services.component';
 import { TeamComponent } from './team/team.component';
 import { RouterModule, Routes } from '@angular/router';
 import { DoctorComponent } from './doctor/doctor.component';
+import { SliderPageComponent } from './slider-page/slider-page.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -15,6 +16,7 @@ export const routes: Routes = [
   { path: 'services', component: ServicesComponent },
   { path: 'team', component: TeamComponent },
   { path: 'doctor/:id', component: DoctorComponent },
+  { path: 'slider/:id', component: SliderPageComponent },
 ]
 
 

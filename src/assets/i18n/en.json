@@ -19,6 +19,7 @@
     "send"                      : "Send",
     
     
+    "know_more"                 : "Know More",
     
     "our_services"              : "Our Services",
     "check_our_services"        : "Check out our services",
@@ -55,7 +56,9 @@
     "call_now"                  : "Call Now",
     "contact_us_msg"            : "Contact us for inquiry",
     "our_vision"                : "Our Vision",
+    "our_mission"                : "Our Mission",
     "vision_description"         : "To provide evidence based digitally oriented dental care",
+    "mission_description"         : "To provide evidence based digitally oriented dental care",
     "" : ""
     
 }

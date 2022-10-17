@@ -25,6 +25,7 @@ import { routes } from './app-routing.module';
 import {LocalizeRouterModule} from '@gilsdav/ngx-translate-router';
 import { LocalizeParser, LocalizeRouterSettings, ManualParserLoader } from '@gilsdav/ngx-translate-router';
 import { Location } from '@angular/common';
+import { SliderPageComponent } from './slider-page/slider-page.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { Location } from '@angular/common';
     ContactComponent,
     FooterComponent,
     DoctorComponent,
-    BackgroundColorDirective
+    BackgroundColorDirective,
+    SliderPageComponent
   ],
   imports: [
     BrowserModule,

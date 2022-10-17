@@ -1,21 +1,21 @@
-<div id="carouselExampleInterval" class="carousel slide carousel-fade" data-bs-touch="true" data-bs-ride="carousel">
+<div id="homeSlider" class="carousel slide carousel-fade" data-bs-touch="true" data-bs-ride="carousel">
 	<div class="carousel-inner">
-		<div *ngFor="let slider of _HomeService.homeData?.sliders" class="carousel-item active" data-bs-interval="4000">
+		<div *ngFor="let slider of _HomeService?.slidersContainer" class="carousel-item active" data-bs-ride="true" data-bs-pause="false" data-bs-interval="3000">
 			<img [src]="slider?.image" class="d-block w-100 position-relative" [alt]="slider?.title + ' Image'">
 			<div class="carousel-caption d-block d-md-block shadow">
 				<h1>{{slider?.title}}</h1>
 				<div class="inner-text">
 					<div class="text-dark" [innerHtml]="slider?.description"></div>
-					<a [routerLink]="['/services' | localize]" i18n class="btn team-service-btn">{{'check_our_services' | translate }}</a>
+					<a [routerLink]="['/slider', slider.id] | localize" i18n class="btn team-service-btn">{{'know_more' | translate }}</a>
 				</div>
 			</div>
 		</div>
 	</div>
-	<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+	<button class="carousel-control-prev" type="button" data-bs-target="#homeSlider" data-bs-slide="prev">
 		<span class="carousel-control-prev-icon" aria-hidden="true"></span>
 		<span class="visually-hidden">Previous</span>
 	</button>
-	<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+	<button class="carousel-control-next" type="button" data-bs-target="#homeSlider" data-bs-slide="next">
 		<span class="carousel-control-next-icon" aria-hidden="true"></span>
 		<span class="visually-hidden">Next</span>
 	</button>
@@ -63,7 +63,7 @@
 				<div *ngIf="teamArray" class="team-member shadow">
 					<div class="team-img position-relative w-100">
 						<a>
-							<img style="cursor: pointer;" [routerLink]="['/doctor', doctor.id] | localize" class="img-fluid" [src]="doctor?.image" [alt]="doctor?.fname+' Image'">
+							<img style="cursor: pointer;" [routerLink]="['/doctor', doctor?.id] | localize" class="img-fluid" [src]="doctor?.image" [alt]="doctor?.fname+' Image'">
 						</a>
 						<div class="img-layer"></div>
 					</div>
@@ -159,7 +159,7 @@
 		</div>
 	</div>
 </section>
-<section class="book-appointment" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000">
+<section id="book-appointment" class="book-appointment" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000">
 	<div class="container-fluid">
 		<div class="row align-items-center justify-content-center">
 			<h2 i18n class="text-capitalize text-center pb-4 my-2 after-title position-relative">{{'book_appointment' | translate }}</h2>
@@ -243,6 +243,24 @@
 					<button i18n [routerLink]="['/contact' | localize]" class="btn btn-call-now rounded px-4 py-3 text-capitalize">{{'contact_us' | translate }}</button>
 				</div>
 			</div>
+		</div>
+	</div>
+</section>
+<section id="partners">
+	<div class="container">
+		<div class="row justify-content-center">
+			<!-- <div *ngFor="let img of _HomeService.partnersArray" class="col-md-2">
+				<img class="img-fluid" [src]="img['main_image']" alt=""> -->
+			<owl-carousel-o class="col-md-12 slider-items position-relative" [options]="advantage_options">
+				<ng-container class="row flex-nowrap">
+					<ng-template *ngFor="let img of _HomeService.partnersArray" carouselSlide>
+						<div class="slider-item p-3">
+							<img class="svg-logo" [src]="img['main_image']" alt="">
+						</div>
+					</ng-template>
+				</ng-container>
+			</owl-carousel-o>
+			<!-- </div> -->
 		</div>
 	</div>
 </section>

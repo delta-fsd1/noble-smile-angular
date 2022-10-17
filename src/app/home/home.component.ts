@@ -25,12 +25,41 @@ export class HomeComponent implements OnInit {
   servicesArray: any = [];
   formError: boolean = false;
 
+  advantage_options: OwlOptions = {
+    loop: true,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: true,
+    dots: false,
+    navSpeed: 700,
+    navText: [``, ``],
+    nav: false,
+    autoplay: true,
+    autoplaySpeed: 900,
+    responsive: {
+      0: {
+        items: 1
+      },
+      400: {
+        items: 2
+      },
+      740: {
+        items: 4
+      },
+      940: {
+        items: 4
+      }
+    },
+    autoWidth: true
+  }
 
-  constructor(private _AppointmentService: AppointmentService, public _HomeService: HomeService, 
-    private _SettingsService: SettingsService, public translate: TranslateService, private spinner: NgxSpinnerService, ) {
+
+  constructor(private _AppointmentService: AppointmentService, public _HomeService: HomeService,
+    private _SettingsService: SettingsService, public translate: TranslateService, private spinner: NgxSpinnerService,) {
     this._HomeService.getHomeData(this.translate.getDefaultLang()).subscribe({
       next: (response) => {
         this._HomeService.homeData = response.data;
+        this._HomeService.partnersArray = response.data.partners;
         this._HomeService.teamArray = response.data.our_team.slice(0, 3)
         this._HomeService.servicesArray = response.data.services.slice(0, 4)
         this.spinner.hide()
@@ -42,6 +71,12 @@ export class HomeComponent implements OnInit {
         this._HomeService.settingsArray = response.data;
       }
     });
+
+    this._HomeService.getSliders(this.translate.getDefaultLang()).subscribe({
+      next: (response) => {
+        this._HomeService.slidersContainer = response.data.sliders;
+      }
+    })
 
   }
 
@@ -76,8 +111,6 @@ export class HomeComponent implements OnInit {
       this.success = false;
     }
   }
-
-
 
 
   customOptions: OwlOptions = {

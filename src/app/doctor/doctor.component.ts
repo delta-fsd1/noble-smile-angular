@@ -3,15 +3,12 @@ import { ActivatedRoute } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { HomeService } from '../home.service';
 
-
 @Component({
   selector: 'app-doctor',
   templateUrl: './doctor.component.html',
   styleUrls: ['./doctor.component.css']
 })
 export class DoctorComponent implements OnInit {
-
-  lang: string = 'en';
 
   constructor(public _HomeService: HomeService, private _ActivatedRoute: ActivatedRoute, public translate: TranslateService) {
 
@@ -27,8 +24,6 @@ export class DoctorComponent implements OnInit {
       }
     })
   }
-
-
 
   ngOnInit(): void {
   }
