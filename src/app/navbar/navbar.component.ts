@@ -63,6 +63,12 @@ export class NavbarComponent implements OnInit {
       }
     });
 
+    this._HomeService.getSliders(lang).subscribe({
+      next: (response) => {
+        this._HomeService.slidersContainer = response.data.sliders;
+      }
+    })
+
     this._HomeService.getAboutData(lang).subscribe({
       next: (response) => {
         this._HomeService.aboutContainer = response.data.about;
