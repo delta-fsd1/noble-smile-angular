@@ -1,5 +1,9 @@
+nav {
+	box-shadow: rgb(0 0 0 / 20%) 0px 2px 4px 0px;
+}
+
 .nav-link {
-	color: rgb(41,168,223) !important;
+	color: rgb(41, 168, 223) !important;
 }
 
 nav a {

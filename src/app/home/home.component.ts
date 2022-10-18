@@ -50,7 +50,8 @@ export class HomeComponent implements OnInit {
         items: 4
       }
     },
-    autoWidth: true
+    autoWidth: true,
+    rtl: true
   }
 
 

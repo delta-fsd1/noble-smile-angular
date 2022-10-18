@@ -24,6 +24,7 @@ export class BackgroundColorDirective {
     if (window.scrollY < 100) {
       if (screen.width > 991) {
         this.renderer.setStyle(this.el.nativeElement, 'backgroundColor', 'rgba(255,255,255, 0.7)');
+        this.renderer.setStyle(this.el.nativeElement, 'transition', 'all 0.4s linear');
         this.renderer.addClass(this.el.nativeElement, 'fixed-top');
       } else {
         this.renderer.removeClass(this.el.nativeElement, 'fixed-top');
